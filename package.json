@@ -1,0 +1,35 @@
+{
+  "name": "wutshy-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n site,bot -c blue,magenta \"next dev\" \"node scripts/telegram-bot.mjs\"",
+    "dev:site": "next dev",
+    "dev:bot": "node scripts/telegram-bot.mjs",
+    "build": "next build",
+    "start": "concurrently -n site,bot -c blue,magenta \"next start\" \"node scripts/telegram-bot.mjs\"",
+    "start:site": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.49.8",
+    "framer-motion": "^12.12.1",
+    "lucide-react": "^0.511.0",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.8",
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "concurrently": "^9.2.3",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "^15.3.3",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3"
+  }
+}
