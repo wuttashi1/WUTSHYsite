@@ -2,54 +2,54 @@
 
 # WUTSHY · Music Portfolio
 
-Музыкальное портфолио WUTSHY: биты, сведение, драм-киты, аудиоплеер и управление контентом на Next.js и Supabase.
+Music producer portfolio with beats, mixing, drum kits, audio previews and content management, built with Next.js and Supabase.
 
-[Правила разработки](CONTRIBUTING.md) · [Ветки](https://github.com/wuttashi1/WUTSHYsite/branches)
+[Contributing](CONTRIBUTING.md) · [Branches](https://github.com/wuttashi1/WUTSHYsite/branches)
 
 </div>
 
 ---
 
-## Возможности
+## Features
 
-- Каталог битов, драм-китов и работ по сведению.
-- Аудиопревью, страницы отдельных работ и поиск.
-- Административная панель для контента и настроек.
-- Supabase для базы данных, авторизации и файлов.
+- Beats, drum kits and mixing portfolio pages.
+- Audio previews, individual work pages and search.
+- Administrative panels for content and settings.
+- Supabase database, authentication and file storage.
 
-## Локальный запуск сайта
+## Run the website locally
 
 ```bash
 npm ci
 npm run dev:site
 ```
 
-Откройте http://localhost:3000. Команда `dev:site` запускает сайт отдельно; `npm run dev` запускает также Telegram-бота из `scripts/telegram-bot.mjs`.
+Open http://localhost:3000. `dev:site` starts the website on its own. `npm run dev` also starts the Telegram integration in `scripts/telegram-bot.mjs`.
 
-## Подключение Supabase
+## Configure Supabase
 
-1. Создайте `.env.local` по `.env.local.example` и заполните параметры своего проекта.
-2. Изучите SQL-файлы в `supabase/` и подготовьте базу.
-3. Настройте пользователя администратора в Supabase Auth.
-4. Перезапустите сайт и проверьте вход в `/admin`.
+1. Create `.env.local` from `.env.local.example` and enter your project settings.
+2. Review the SQL files in `supabase/` and prepare the database.
+3. Configure an administrator account in Supabase Auth.
+4. Restart the website and check sign-in at `/admin`.
 
-## Сборка
+## Production build
 
 ```bash
 npm run build
 npm run start:site
 ```
 
-## Навигация
+## Project layout
 
-- `src/app/` — публичные страницы, API и админка.
-- `src/components/` — карточки, плеер и интерфейс.
-- `src/lib/` — настройки, данные и Supabase.
-- `supabase/` — SQL-файлы.
-- `scripts/` — вспомогательные интеграции.
+- `src/app/` — public pages, API routes and administration.
+- `src/components/` — cards, audio player and interface components.
+- `src/lib/` — configuration, data and Supabase clients.
+- `supabase/` — SQL files.
+- `scripts/` — supporting integrations.
 
-**Стек:** Next.js 15 · React 19 · TypeScript · Tailwind CSS 4 · Framer Motion · Supabase.
+**Stack:** Next.js 15 · React 19 · TypeScript · Tailwind CSS 4 · Framer Motion · Supabase.
 
-## Разработка
+## Development
 
-Соглашения по веткам и изменениям: [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for branch and contribution guidelines.
