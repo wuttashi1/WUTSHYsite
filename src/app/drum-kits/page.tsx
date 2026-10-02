@@ -1,3 +1,5 @@
+
+import { T } from "@/components/LocaleProvider";
 import { getDrumKits, getSiteSettings } from "@/lib/queries";
 import { SectionHeader } from "@/components/SectionHeader";
 import { DrumKitCard } from "@/components/DrumKitCard";
@@ -26,7 +28,7 @@ export default async function DrumKitsPage() {
             ))}
           </div>
         ) : (
-          <p className="text-black/40">No drum kits yet. Check back soon.</p>
+          <p className="text-black/40"><T>No drum kits yet. Check back soon.</T></p>
         )}
       </div>
     </section>

@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import Image from "next/image";
 import { usePlayer } from "@/context/PlayerContext";
 import { isVideo } from "@/lib/data";
@@ -55,7 +57,7 @@ export function AnimatedCover({
       ) : (
         <div className="flex h-full w-full items-center justify-center bg-[#1a1a1a]">
           <span className="text-4xl font-black text-white/10">
-            {fallbackChar}
+            <T>{fallbackChar}</T>
           </span>
         </div>
       )}

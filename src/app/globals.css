@@ -7,7 +7,48 @@
   --color-surface-card: #222222;
   --color-accent: #facc15;
   --color-accent-green: #4ade80;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :focus-visible { outline: 2px solid #8b5cf6; outline-offset: 5px; }
+  button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+  button:not(:disabled), select { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  html { scroll-padding-top: 90px; }
+}
+
+.eyebrow { display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #71717a; }
+.portfolio-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; border-radius: 999px; padding: 14px 22px; font-size: 13px; font-weight: 500; transition: transform .25s, box-shadow .25s; }
+.portfolio-button:hover { transform: translateY(-3px); box-shadow: 0 10px 25px #00000012; }
+.code-art { position: relative; overflow: hidden; border: 1px solid #ffffff18; border-radius: 24px; color: white; background: radial-gradient(ellipse at 90% 70%, #46334e 0%, transparent 60%), #141416; box-shadow: 0 30px 70px -25px #3b245d60; transform: rotate(3deg); transition: transform .6s; }
+.code-art:hover { transform: rotate(0deg) translateY(-5px); }
+.code-art i { width: 6px; height: 6px; border-radius: 50%; background: #ffffff40; }
+.code-caret { color: #bef264; animation: caret 1.2s step-end infinite; }
+.project-art { background: radial-gradient(ellipse at 20% 20%, #ddd6fe, transparent 70%), linear-gradient(130deg, #ede9fe, #d8f4e9); }
+.project-disc { display: grid; place-items: center; width: 200px; height: 200px; border-radius: 50%; color: #d9f99d; background: repeating-radial-gradient(circle, #222 0px, #222 2px, #333 3px, #161616 4px); box-shadow: 15px 25px 35px #20113b30; transform: rotate(-15deg); transition: transform .8s cubic-bezier(.22,1,.36,1); }
+.project-art:hover .project-disc { transform: rotate(15deg) scale(1.04); }
+.project-card { transition: box-shadow .4s, transform .4s; }
+.project-card:hover { box-shadow: 0 20px 50px -30px #3b245d60; transform: translateY(-3px); }
+.portfolio-switch { background-image: radial-gradient(ellipse at 65% 150%, #49365e, transparent 65%); transition: box-shadow .3s; }
+.portfolio-switch:hover { box-shadow: 0 15px 40px -20px #492a77; }
+.admin-shell { background-image: radial-gradient(ellipse at 80% 0%, #26203166, transparent 50%); }
+.admin-shell select { color-scheme: dark; }
+.admin-shell input:focus, .admin-shell textarea:focus, .admin-shell select:focus { border-color: #c4b5fd88; box-shadow: 0 0 0 3px #c4b5fd12; }
+@keyframes caret { 50% { opacity: 0; } }
+.chat-demo { overflow: hidden; border: 1px solid #00000012; border-radius: 20px; box-shadow: 0 20px 55px -25px #284f6550; }
+.chat-log { background-color: #e3eddf; background-image: radial-gradient(#78966c20 1px, transparent 1px); background-size: 18px 18px; overscroll-behavior: contain; }
+.chat-bubble { max-width: 92%; margin-bottom: 12px; padding: 12px 14px 6px; border-radius: 13px 13px 13px 3px; background: white; color: #28333a; box-shadow: 0 1px 2px #0000000b; animation: chat-in .25s ease-out; }
+.chat-outgoing { margin-left: auto; width: fit-content; background: #d6f5bd; border-radius: 13px 13px 3px 13px; }
+.chat-discord .chat-log { background: #313338; }
+.chat-discord .chat-bubble { background: #3c3f46; color: #edf0f4; border-radius: 8px; }
+.chat-discord .chat-outgoing { background: #5865f2; }
+.spatial-scene { background: linear-gradient(#253a47, #74a5a0 60%, #364e39 61%, #1c302b); }
+.spatial-mountain { position: absolute; inset: 25% -10% 0; background: #20382b; clip-path: polygon(0 65%, 15% 35%, 25% 50%, 45% 0, 65% 40%, 80% 20%, 100% 70%, 100% 100%, 0 100%); }
+@keyframes chat-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 
 @layer base {

@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useHoverSound } from "@/hooks/useHoverSound";
@@ -37,25 +39,25 @@ export function CategoryCard({
         {imagePosition === "left" && (
           <div className="hidden w-2/5 items-center justify-center bg-[#222] sm:flex">
             <span className="text-5xl font-black text-white/10">
-              {title.charAt(0)}
+              <T>{title.charAt(0)}</T>
             </span>
           </div>
         )}
 
         <div className="flex flex-1 flex-col justify-center p-6 md:p-8">
-          <h3 className="text-xl font-bold md:text-2xl">{title}</h3>
+          <h3 className="text-xl font-bold md:text-2xl"><T>{title}</T></h3>
           <p className="mt-2 text-sm leading-relaxed text-white/50">
-            {description}
+            <T>{description}</T>
           </p>
-          <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium transition-colors group-hover:text-[#facc15]">
-            Explore now <ArrowRight size={14} />
+          <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium transition-colors group-hover:text-[#facc15]"><T>
+            Explore now </T><ArrowRight size={14} />
           </span>
         </div>
 
         {imagePosition === "right" && (
           <div className="hidden w-2/5 items-center justify-center bg-[#222] sm:flex">
             <span className="text-5xl font-black text-white/10">
-              {title.charAt(0)}
+              <T>{title.charAt(0)}</T>
             </span>
           </div>
         )}

@@ -117,6 +117,7 @@ export interface SiteSettings {
     tagline: string;
   };
   content: SiteContent;
+  content_locales?: Partial<Record<"ru" | "uk" | "en" | "de", SiteContent>>;
   social: {
     instagram: SocialLink;
     spotify: SocialLink;

@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T, LocalizedInput } from "@/components/LocaleProvider";
 import { useEffect, useState, Suspense, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
@@ -273,25 +275,25 @@ function DrumKitsAdminContent() {
     <div className="p-6 md:p-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">Drum Kits</h1>
-          <p className="mt-1 text-sm text-white/40">
+          <h1 className="text-2xl font-bold"><T>Drum Kits</T></h1>
+          <p className="mt-1 text-sm text-white/40"><T>
             Kits, tracklists, pricing and buy links.
-          </p>
+          </T></p>
         </div>
         <Button onClick={openNew} {...hoverProps}>
           <span className="inline-flex items-center gap-1">
-            <Plus size={16} /> New kit
-          </span>
+            <Plus size={16} /><T> New kit
+          </T></span>
         </Button>
       </div>
 
       {loading ? (
-        <p className="mt-8 text-white/40">Loading...</p>
+        <p className="mt-8 text-white/40"><T>Loading...</T></p>
       ) : kits.length === 0 ? (
         <div className="mt-12 rounded-2xl border border-dashed border-white/10 py-16 text-center text-white/40">
-          <Disc3 className="mx-auto mb-3" size={28} />
+          <Disc3 className="mx-auto mb-3" size={28} /><T>
           No kits yet. Create your first one.
-        </div>
+        </T></div>
       ) : (
         <div className="mt-6 space-y-3">
           {kits.map((kit) => (
@@ -309,19 +311,19 @@ function DrumKitsAdminContent() {
                     setExpandedKit(expandedKit === kit.id ? null : kit.id)
                   }
                 >
-                  <p className="truncate text-sm font-medium">{kit.title}</p>
+                  <p className="truncate text-sm font-medium"><T>{kit.title}</T></p>
                   <p className="text-xs text-white/40">
-                    {kit.tracks?.length || 0} tracks
-                    {kit.price ? ` · ${kit.price} ${kit.currency}` : ""}
+                    {kit.tracks?.length || 0}<T> tracks
+                    </T><T>{kit.price ? ` · ${kit.price} ${kit.currency}` : ""}</T>
                     <span className="ml-2 text-white/20">
-                      {expandedKit === kit.id ? "▲" : "▼"}
+                      <T>{expandedKit === kit.id ? "▲" : "▼"}</T>
                     </span>
                   </p>
                 </button>
                 {kit.is_new && (
-                  <span className="rounded-full bg-[#4ade80] px-1.5 py-0.5 text-[10px] font-bold text-black">
+                  <span className="rounded-full bg-[#4ade80] px-1.5 py-0.5 text-[10px] font-bold text-black"><T>
                     NEW
-                  </span>
+                  </T></span>
                 )}
                 <button
                   onClick={() => openEdit(kit)}
@@ -347,7 +349,7 @@ function DrumKitsAdminContent() {
                       className="flex items-center gap-3 py-1.5 text-sm text-white/60"
                     >
                       <span className="w-5 text-xs text-white/30">{i + 1}</span>
-                      <span className="flex-1 truncate">{track.title}</span>
+                      <span className="flex-1 truncate"><T>{track.title}</T></span>
                       <button
                         onClick={() => handleDeleteTrack(track.id, track.title)}
                         className="text-white/30 hover:text-red-400"
@@ -396,9 +398,9 @@ function DrumKitsAdminContent() {
                 value={form.currency}
                 onChange={(e) => set("currency", e.target.value)}
               >
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-                <option value="RUB">RUB</option>
+                <option value="EUR"><T>EUR</T></option>
+                <option value="USD"><T>USD</T></option>
+                <option value="RUB"><T>RUB</T></option>
               </Select>
             </Field>
           </div>
@@ -446,30 +448,30 @@ function DrumKitsAdminContent() {
 
           <div className="rounded-xl border border-white/10 p-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-white/50">
-                Tracklist ({tracks.length})
+              <span className="text-xs font-medium text-white/50"><T>
+                Tracklist (</T>{tracks.length})
               </span>
               <button
                 type="button"
                 onClick={addTrack}
                 className="text-xs font-medium text-[#facc15]"
                 {...hoverProps}
-              >
+              ><T>
                 + Add track
-              </button>
+              </T></button>
             </div>
             <div className="mt-3 space-y-3">
               {tracks.map((track, i) => (
                 <div key={i} className="rounded-xl bg-white/5 p-3">
                   <div className="flex items-center gap-2">
                     <GripVertical size={14} className="text-white/20" />
-                    <input
+                    <LocalizedInput
                       value={track.title}
                       onChange={(e) => updateTrack(i, "title", e.target.value)}
                       placeholder="Track title"
                       className="flex-1 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm outline-none"
                     />
-                    <input
+                    <LocalizedInput
                       value={track.duration_seconds}
                       onChange={(e) =>
                         updateTrack(i, "duration_seconds", e.target.value)
@@ -501,11 +503,11 @@ function DrumKitsAdminContent() {
 
           <div className="flex gap-2 pt-2">
             <Button onClick={handleSave} disabled={saving} {...hoverProps}>
-              {saving ? "Saving..." : editing ? "Update" : "Create"}
+              <T>{saving ? "Saving..." : editing ? "Update" : "Create"}</T>
             </Button>
-            <Button variant="ghost" onClick={() => setShowForm(false)}>
+            <Button variant="ghost" onClick={() => setShowForm(false)}><T>
               Cancel
-            </Button>
+            </T></Button>
           </div>
         </div>
       </Modal>

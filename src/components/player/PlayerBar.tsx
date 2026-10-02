@@ -1,12 +1,14 @@
 "use client";
 
+
+import { T, LocalizedInput } from "@/components/LocaleProvider";
 import { usePlayer } from "@/context/PlayerContext";
 import { usePathname } from "next/navigation";
 import { Play, Pause, SkipBack, SkipForward, Volume2 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { formatDuration, isVideo } from "@/lib/data";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export function PlayerBar() {
   const {
@@ -24,8 +26,11 @@ export function PlayerBar() {
   } = usePlayer();
   const pathname = usePathname();
   const barRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (pathname === "/connect" && isPlaying) toggle();
+  }, [pathname, isPlaying, toggle]);
 
-  if (pathname.startsWith("/admin")) return null;
+  if (pathname.startsWith("/admin") || pathname === "/connect") return null;
 
   const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -72,23 +77,23 @@ export function PlayerBar() {
                 ) : current.coverUrl ? (
                   <Image src={current.coverUrl} alt={current.title} fill className="object-cover" />
                 ) : (
-                  <div className="flex h-full items-center justify-center text-sm font-bold text-white/20">
+                  <div className="flex h-full items-center justify-center text-sm font-bold text-white/20"><T>
                     W
-                  </div>
+                  </T></div>
                 )}
               </div>
 
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold">{current.title}</p>
+                <p className="truncate text-sm font-semibold"><T>{current.title}</T></p>
                 {current.subtitle && (
                   <p className="truncate text-xs text-white/40">
-                    {current.subtitle}
+                    <T>{current.subtitle}</T>
                   </p>
                 )}
               </div>
 
               <span className="hidden text-xs tabular-nums text-white/40 sm:block">
-                {formatDuration(currentTime)} / {formatDuration(duration)}
+                <T>{formatDuration(currentTime)}</T> / <T>{formatDuration(duration)}</T>
               </span>
 
               <div className="flex items-center gap-1 sm:gap-2">
@@ -117,7 +122,7 @@ export function PlayerBar() {
 
               <div className="hidden items-center gap-2 md:flex">
                 <Volume2 size={15} className="text-white/40" />
-                <input
+                <LocalizedInput
                   type="range"
                   min={0}
                   max={1}

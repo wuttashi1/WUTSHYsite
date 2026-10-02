@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -35,10 +37,10 @@ export function FeaturedVideo({
       <div className="mx-auto max-w-5xl px-4 md:px-6">
         <Reveal>
           <h2 className="text-center text-2xl font-bold md:text-3xl">
-            {title || "Featured Video"}
+            <T>{title || "Featured Video"}</T>
           </h2>
           <p className="mt-2 text-center text-sm text-black/50">
-            {subtitle || "Watch the latest from WUTSHY"}
+            <T>{subtitle || "Watch the latest from WUTSHY"}</T>
           </p>
         </Reveal>
 
@@ -85,11 +87,11 @@ export function FeaturedVideo({
                   <div className="absolute inset-x-0 bottom-0 p-5 text-left md:p-7">
                     {videoTitle && (
                       <h3 className="line-clamp-2 text-lg font-bold text-white md:text-2xl">
-                        {videoTitle}
+                        <T>{videoTitle}</T>
                       </h3>
                     )}
                     {author && (
-                      <p className="mt-1 text-sm text-white/60">{author}</p>
+                      <p className="mt-1 text-sm text-white/60"><T>{author}</T></p>
                     )}
                   </div>
                 )}

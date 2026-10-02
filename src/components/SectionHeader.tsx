@@ -1,3 +1,5 @@
+
+import { T } from "@/components/LocaleProvider";
 interface SectionHeaderProps {
   label?: string;
   title: string;
@@ -19,7 +21,7 @@ export function SectionHeader({
             dark ? "text-white/40" : "text-black/40"
           }`}
         >
-          {label}
+          <T>{label}</T>
         </span>
       )}
       <h2
@@ -27,7 +29,7 @@ export function SectionHeader({
           dark ? "text-white" : "text-black"
         }`}
       >
-        {title}
+        <T>{title}</T>
       </h2>
       {subtitle && (
         <p
@@ -35,7 +37,7 @@ export function SectionHeader({
             dark ? "text-white/50" : "text-black/50"
           }`}
         >
-          {subtitle}
+          <T>{subtitle}</T>
         </p>
       )}
     </div>

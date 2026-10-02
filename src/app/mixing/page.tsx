@@ -1,3 +1,5 @@
+
+import { T } from "@/components/LocaleProvider";
 import { getWorks, getSiteSettings } from "@/lib/queries";
 import { SectionHeader } from "@/components/SectionHeader";
 import { MixBeforeAfter } from "@/components/MixBeforeAfter";
@@ -27,7 +29,7 @@ export default async function MixingPage() {
             ))}
           </div>
         ) : (
-          <p className="text-black/40">No mixing work yet. Check back soon.</p>
+          <p className="text-black/40"><T>No mixing work yet. Check back soon.</T></p>
         )}
       </div>
     </section>

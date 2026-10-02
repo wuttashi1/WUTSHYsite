@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T, LocalizedInput } from "@/components/LocaleProvider";
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
@@ -56,10 +58,10 @@ export function FileUpload({
 
   return (
     <div className="space-y-2">
-      <label className="text-xs font-medium text-white/50">{label}</label>
+      <label className="text-xs font-medium text-white/50"><T>{label}</T></label>
       {value ? (
         <div className="flex items-center gap-2 rounded-xl bg-white/5 px-3 py-2 text-sm">
-          <span className="flex-1 truncate text-white/70">{value}</span>
+          <span className="flex-1 truncate text-white/70"><T>{value}</T></span>
           <button
             type="button"
             onClick={() => onChange("")}
@@ -79,8 +81,8 @@ export function FileUpload({
           ) : (
             <Upload size={16} />
           )}
-          {uploading ? "Uploading..." : label}
-          <input
+          <T>{uploading ? "Uploading..." : label}</T>
+          <LocalizedInput
             type="file"
             accept={accept}
             onChange={handleUpload}

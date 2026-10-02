@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T, LocalizedInput, LanguageSwitcher } from "@/components/LocaleProvider";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
@@ -48,19 +50,22 @@ export default function AdminLoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-sm">
+        <div className="mb-6 flex justify-end"><LanguageSwitcher /></div>
         <div className="mb-8 text-center">
-          <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#facc15] text-lg font-bold text-black">
+          <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#facc15] text-lg font-bold text-black"><T>
             W
-          </span>
-          <h1 className="mt-4 text-2xl font-bold">WUTSHY Admin</h1>
-          <p className="mt-1 text-sm text-white/40">Sign in to manage your site</p>
+          </T></span>
+          <h1 className="mt-4 text-2xl font-bold"><T>WUTSHY Admin</T></h1>
+          <p className="mt-1 text-sm text-white/40"><T>Sign in to manage your site</T></p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="text-xs text-white/50">Email</label>
-            <input
+            <label htmlFor="admin-email" className="text-xs text-white/50"><T>Email</T></label>
+            <LocalizedInput
               type="text"
+              id="admin-email"
+              autoComplete="username"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-white/30"
@@ -69,9 +74,11 @@ export default function AdminLoginPage() {
             />
           </div>
           <div>
-            <label className="text-xs text-white/50">Password</label>
-            <input
+            <label htmlFor="admin-password" className="text-xs text-white/50"><T>Password</T></label>
+            <LocalizedInput
               type="password"
+              id="admin-password"
+              autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none focus:border-white/30"
@@ -80,7 +87,7 @@ export default function AdminLoginPage() {
           </div>
 
           {error && (
-            <p className="text-sm text-red-400">{error}</p>
+            <p className="text-sm text-red-400"><T>{error}</T></p>
           )}
 
           <button
@@ -89,14 +96,14 @@ export default function AdminLoginPage() {
             className="w-full rounded-xl bg-white py-3 text-sm font-medium text-black transition-colors hover:bg-white/90 disabled:opacity-50"
             {...hoverProps}
           >
-            {loading ? "Signing in..." : "Sign in"}
+            <T>{loading ? "Signing in..." : "Sign in"}</T>
           </button>
         </form>
 
         {!isSupabaseConfigured() && (
-          <p className="mt-4 text-center text-xs text-white/30">
+          <p className="mt-4 text-center text-xs text-white/30"><T>
             Demo mode: admin / wutshy
-          </p>
+          </T></p>
         )}
       </div>
     </div>

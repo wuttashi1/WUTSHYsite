@@ -1,3 +1,5 @@
+
+import { T } from "@/components/LocaleProvider";
 import { getWorks, getSiteSettings } from "@/lib/queries";
 import { SectionHeader } from "@/components/SectionHeader";
 import { WorkCard } from "@/components/WorkCard";
@@ -32,7 +34,7 @@ export default async function BeatsPage() {
               ))}
             </div>
           ) : (
-            <p className="text-black/40">No beats yet. Check back soon.</p>
+            <p className="text-black/40"><T>No beats yet. Check back soon.</T></p>
           )}
         </div>
       </section>

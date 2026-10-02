@@ -1,3 +1,5 @@
+
+import { T } from "@/components/LocaleProvider";
 import { getSiteSettings } from "@/lib/queries";
 import { SectionHeader } from "@/components/SectionHeader";
 
@@ -15,13 +17,13 @@ export default async function AboutPage() {
         <div className="grid gap-16 lg:grid-cols-2">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-black/40">
-              {about.label}
+              <T>{about.label}</T>
             </span>
             <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">
-              {about.title}
+              <T>{about.title}</T>
             </h1>
-            <p className="mt-6 leading-relaxed text-black/60">{about.paragraph_1}</p>
-            <p className="mt-4 leading-relaxed text-black/60">{about.paragraph_2}</p>
+            <p className="mt-6 leading-relaxed text-black/60"><T>{about.paragraph_1}</T></p>
+            <p className="mt-4 leading-relaxed text-black/60"><T>{about.paragraph_2}</T></p>
           </div>
 
           <div>
@@ -30,13 +32,13 @@ export default async function AboutPage() {
               {faq.items.map((item) => (
                 <details key={item.question} className="group py-4">
                   <summary className="flex cursor-pointer items-center justify-between font-medium transition-colors hover:text-black/70">
-                    {item.question}
+                    <T>{item.question}</T>
                     <span className="ml-4 text-black/30 transition-transform group-open:rotate-180">
                       ↓
                     </span>
                   </summary>
                   <p className="mt-3 text-sm leading-relaxed text-black/50">
-                    {item.answer}
+                    <T>{item.answer}</T>
                   </p>
                 </details>
               ))}

@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T, LocalizedInput } from "@/components/LocaleProvider";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Search, Menu, X } from "lucide-react";
@@ -7,6 +9,7 @@ import { useState } from "react";
 import { useHoverSound } from "@/hooks/useHoverSound";
 import { motion, AnimatePresence } from "framer-motion";
 import { Logo } from "@/components/Logo";
+import { LanguageSwitcher } from "@/components/LocaleProvider";
 
 const links = [
   { href: "/beats", label: "Beats" },
@@ -23,6 +26,18 @@ export function Navbar() {
   const { hoverProps } = useHoverSound();
 
   if (pathname.startsWith("/admin")) return null;
+  if (pathname === "/connect") return (
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#111]/95 text-white backdrop-blur-xl">
+      <nav aria-label="Portfolio" className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+        <Logo href="/connect" size={36} className="text-white" />
+        <div className="flex items-center gap-4 sm:gap-6">
+          <a href="#projects" className="hidden text-xs text-white/60 hover:text-white sm:block"><T>Projects</T></a>
+          <a href="#contact" className="text-xs text-white/70 hover:text-white"><T>Contact</T></a>
+          <LanguageSwitcher />
+        </div>
+      </nav>
+    </header>
+  );
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +48,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#111] text-white">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#111]/95 text-white shadow-sm backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
         <div {...hoverProps}>
           <Logo size={36} className="text-white" />
@@ -49,10 +64,10 @@ export function Navbar() {
               }`}
               {...hoverProps}
             >
-              {link.label}
+              <T>{link.label}</T>
               {link.badge && (
                 <span className="ml-1.5 rounded-full bg-[#4ade80] px-1.5 py-0.5 text-[10px] font-bold text-black">
-                  {link.badge}
+                  <T>{link.badge}</T>
                 </span>
               )}
             </Link>
@@ -67,7 +82,7 @@ export function Navbar() {
             <button type="submit" aria-label="Search" {...hoverProps}>
               <Search size={14} className="text-white/50" />
             </button>
-            <input
+            <LocalizedInput
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="search beats, kits..."
@@ -76,10 +91,12 @@ export function Navbar() {
           </form>
         </div>
 
+        <LanguageSwitcher />
         <button
           className="md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -101,7 +118,7 @@ export function Navbar() {
                 <button type="submit" aria-label="Search">
                   <Search size={14} className="text-white/50" />
                 </button>
-                <input
+                <LocalizedInput
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="search beats, kits..."
@@ -116,10 +133,10 @@ export function Navbar() {
                   className="rounded-lg px-3 py-2 text-sm hover:bg-white/10"
                   {...hoverProps}
                 >
-                  {link.label}
+                  <T>{link.label}</T>
                   {link.badge && (
                     <span className="ml-1.5 rounded-full bg-[#4ade80] px-1.5 py-0.5 text-[10px] font-bold text-black">
-                      {link.badge}
+                      <T>{link.badge}</T>
                     </span>
                   )}
                 </Link>

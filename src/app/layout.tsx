@@ -6,6 +6,9 @@ import { Footer } from "@/components/Footer";
 import { PlayerProvider } from "@/context/PlayerContext";
 import { PlayerBar } from "@/components/player/PlayerBar";
 import { getSiteSettings } from "@/lib/settings";
+import { cookies } from "next/headers";
+import { validLocale, contentDictionary, locales } from "@/lib/i18n";
+import { LocaleProvider } from "@/components/LocaleProvider";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -28,16 +31,18 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const settings = await getSiteSettings();
+  const locale = validLocale((await cookies()).get("wutshy-locale")?.value);
+  const overrides = Object.fromEntries(locales.map(language => [language, contentDictionary(settings.content, settings.content_locales?.[language])]));
 
   return (
-    <html lang="ru" className={inter.variable}>
+    <html lang={locale} className={inter.variable}>
       <body className="min-h-screen flex flex-col">
-        <PlayerProvider>
+        <LocaleProvider initialLocale={locale} overrides={overrides}><PlayerProvider>
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer settings={settings} />
           <PlayerBar />
-        </PlayerProvider>
+        </PlayerProvider></LocaleProvider>
       </body>
     </html>
   );

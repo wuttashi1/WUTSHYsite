@@ -1,3 +1,5 @@
+
+import { T } from "@/components/LocaleProvider";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,12 +7,13 @@ interface LogoProps {
   size?: number;
   showText?: boolean;
   className?: string;
+  href?: string;
 }
 
-export function Logo({ size = 32, showText = true, className = "" }: LogoProps) {
+export function Logo({ size = 32, showText = true, className = "", href = "/" }: LogoProps) {
   return (
     <Link
-      href="/"
+      href={href}
       className={`flex items-center gap-2.5 ${className}`}
     >
       <Image
@@ -22,7 +25,7 @@ export function Logo({ size = 32, showText = true, className = "" }: LogoProps) 
         priority
       />
       {showText && (
-        <span className="text-lg font-bold tracking-tight">WUTSHY</span>
+        <span className="text-lg font-bold tracking-tight"><T>WUTSHY</T></span>
       )}
     </Link>
   );

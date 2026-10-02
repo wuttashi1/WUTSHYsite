@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import { Work } from "@/types";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -105,7 +107,7 @@ export function MixBeforeAfter({ work, index = 0 }: { work: Work; index?: number
             style={{ filter: rawFilter }}
           >
             <span className="text-5xl font-black text-white/10">
-              {work.title.charAt(0).toUpperCase()}
+              <T>{work.title.charAt(0).toUpperCase()}</T>
             </span>
           </div>
         )}
@@ -120,7 +122,7 @@ export function MixBeforeAfter({ work, index = 0 }: { work: Work; index?: number
               : "bg-[#facc15] text-black"
           }`}
         >
-          {mode === "before" ? "Raw" : "Mixed & Mastered"}
+          <T>{mode === "before" ? "Raw" : "Mixed & Mastered"}</T>
         </motion.span>
 
         {currentUrl && (
@@ -137,8 +139,8 @@ export function MixBeforeAfter({ work, index = 0 }: { work: Work; index?: number
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h3 className="truncate text-lg font-bold">{work.title}</h3>
-            {work.artist && <p className="text-xs text-white/40">{work.artist}</p>}
+            <h3 className="truncate text-lg font-bold"><T>{work.title}</T></h3>
+            {work.artist && <p className="text-xs text-white/40"><T>{work.artist}</T></p>}
           </div>
         </div>
 
@@ -152,7 +154,7 @@ export function MixBeforeAfter({ work, index = 0 }: { work: Work; index?: number
                   mode === m ? "bg-white text-black" : "text-white/50 hover:text-white"
                 }`}
               >
-                {m === "before" ? "Before (raw)" : "After (mix)"}
+                <T>{m === "before" ? "Before (raw)" : "After (mix)"}</T>
               </button>
             ))}
           </div>
@@ -170,14 +172,14 @@ export function MixBeforeAfter({ work, index = 0 }: { work: Work; index?: number
               />
             </div>
             <span className="text-xs tabular-nums text-white/40">
-              {formatDuration(time)} / {formatDuration(duration)}
+              <T>{formatDuration(time)}</T> / <T>{formatDuration(duration)}</T>
             </span>
           </div>
         )}
 
         {work.description && (
           <p className="mt-4 text-sm leading-relaxed text-white/50">
-            {work.description}
+            <T>{work.description}</T>
           </p>
         )}
       </div>

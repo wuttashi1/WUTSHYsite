@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+
+import { T } from "@/components/LocaleProvider";
+import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface RevealProps {
@@ -11,9 +13,10 @@ interface RevealProps {
 }
 
 export function Reveal({ children, delay = 0, y = 20, className }: RevealProps) {
+  const reduced = useReducedMotion();
   return (
     <motion.div
-      initial={{ opacity: 0, y }}
+      initial={reduced ? false : { opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
@@ -48,8 +51,8 @@ export function AnimatedWords({
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          {word}&nbsp;
-        </motion.span>
+          <T>{word}</T><T>&nbsp;
+        </T></motion.span>
       ))}
     </span>
   );

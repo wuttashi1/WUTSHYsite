@@ -1,3 +1,5 @@
+
+import { T } from "@/components/LocaleProvider";
 import Link from "next/link";
 import { getFeaturedWorks, getWorks, getDrumKits, getSiteSettings } from "@/lib/queries";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -119,7 +121,7 @@ export default async function HomePage() {
                 href="/beats"
                 className="inline-flex items-center gap-2 rounded-full border border-black/10 px-6 py-3 text-sm font-medium transition-colors hover:bg-black hover:text-white"
               >
-                {settings.content.home.featured_beats.cta}
+                <T>{settings.content.home.featured_beats.cta}</T>
               </Link>
             </div>
           </div>

@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import { Work } from "@/types";
 import { motion } from "framer-motion";
 import { useHoverSound } from "@/hooks/useHoverSound";
@@ -43,9 +45,9 @@ export function PlacementCard({ work, index = 0, queue }: PlacementCardProps) {
             fallbackChar={work.title.charAt(0).toUpperCase()}
             className="h-full w-full transition-transform duration-500 group-hover:scale-105"
           />
-          <span className="absolute bottom-3 left-3 rounded-full bg-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+          <span className="absolute bottom-3 left-3 rounded-full bg-black/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white"><T>
             Placement
-          </span>
+          </T></span>
 
           {work.audio_url && (
             <div className="absolute bottom-3 right-3 opacity-0 transition-all duration-300 group-hover:opacity-100">
@@ -74,16 +76,16 @@ export function PlacementCard({ work, index = 0, queue }: PlacementCardProps) {
       <div className="p-4">
         <Link href={`/beats/${work.id}`}>
           <h3 className="font-bold text-black transition-opacity hover:opacity-70">
-            {work.title}
+            <T>{work.title}</T>
           </h3>
         </Link>
         {work.artist && (
           <p className="mt-0.5 text-sm font-medium text-black/70">
-            {work.artist}
+            <T>{work.artist}</T>
           </p>
         )}
         {work.description && (
-          <p className="mt-1 text-sm text-black/60">{work.description}</p>
+          <p className="mt-1 text-sm text-black/60"><T>{work.description}</T></p>
         )}
       </div>
     </motion.article>

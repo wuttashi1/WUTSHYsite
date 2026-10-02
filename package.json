@@ -1,6 +1,6 @@
 {
   "name": "wutshy-site",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "concurrently -n site,bot -c blue,magenta \"next dev\" \"node scripts/telegram-bot.mjs\"",
@@ -9,7 +9,10 @@
     "build": "next build",
     "start": "concurrently -n site,bot -c blue,magenta \"next start\" \"node scripts/telegram-bot.mjs\"",
     "start:site": "next start",
-    "lint": "next lint"
+    "lint": "eslint src",
+    "check:i18n": "node scripts/check-localization.cjs",
+    "i18n:build": "node scripts/build-translations.mjs",
+    "check:collections": "node scripts/check-collections.cjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
@@ -31,5 +34,8 @@
     "eslint-config-next": "^15.3.3",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "postcss": "^8.5.23"
   }
 }

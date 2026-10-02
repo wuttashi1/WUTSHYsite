@@ -46,6 +46,9 @@ function mergeSettings(rows: { key: string; value: unknown }[]): SiteSettings {
       case "content":
         s.content = deepMergeContent(s.content, v as Partial<SiteSettings["content"]>);
         break;
+      case "content_locales":
+        s.content_locales = v as SiteSettings["content_locales"];
+        break;
     }
   }
 
@@ -67,7 +70,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
   if (!isSupabaseConfigured()) return DEMO_SETTINGS;
 
   const supabase = await createClient();
-  const { data } = await supabase.from("wutshy_settings").select("*");
+  const { data } = await supabase.from("wutshy_settings").select("*").in("key", ["hero", "social", "contact", "payments", "featured_video", "content", "content_locales"]);
   if (!data?.length) return DEMO_SETTINGS;
   return mergeSettings(data);
 }

@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import { Work } from "@/types";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -23,12 +25,12 @@ export function TrendingCarousel({ items }: { items: Work[] }) {
         className="scrollbar-hide flex gap-3 overflow-x-auto pb-2"
       >
         <div className="flex shrink-0 items-center gap-3 rounded-2xl bg-[#111] px-5 py-4 text-white">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#facc15] text-sm font-bold text-black">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#facc15] text-sm font-bold text-black"><T>
             W
-          </span>
-          <span className="text-sm font-bold uppercase tracking-wide">
+          </T></span>
+          <span className="text-sm font-bold uppercase tracking-wide"><T>
             Trending now
-          </span>
+          </T></span>
         </div>
 
         {items.map((work, i) => (
@@ -45,17 +47,17 @@ export function TrendingCarousel({ items }: { items: Work[] }) {
               {work.cover_url ? (
                 <Image src={work.cover_url} alt={work.title} fill className="object-cover" />
               ) : (
-                <div className="flex h-full items-center justify-center text-xs font-bold text-white/20">
+                <div className="flex h-full items-center justify-center text-xs font-bold text-white/20"><T>
                   W
-                </div>
+                </T></div>
               )}
             </div>
             <Link href={`/beats/${work.id}`} className="min-w-0">
               <p className="truncate text-sm font-semibold lowercase">
-                {work.title}
+                <T>{work.title}</T>
               </p>
               <p className="truncate text-xs text-white/40">
-                {work.tags.slice(0, 2).join(" · ") || work.type}
+                <T>{work.tags.slice(0, 2).join(" · ") || work.type}</T>
               </p>
             </Link>
             {work.audio_url && (

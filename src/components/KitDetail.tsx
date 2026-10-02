@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import { DrumKit, SiteSettings } from "@/types";
 import { formatPrice, formatDuration, kitTrackToTrack } from "@/lib/data";
 import { motion } from "framer-motion";
@@ -36,8 +38,8 @@ export function KitDetail({
           className="mb-6 inline-flex items-center gap-2 text-sm text-black/50 transition-colors hover:text-black"
           {...hoverProps}
         >
-          <ArrowLeft size={16} /> Back to kits
-        </Link>
+          <ArrowLeft size={16} /><T> Back to kits
+        </T></Link>
 
         <div className="grid gap-10 lg:grid-cols-2">
           <motion.div
@@ -60,16 +62,16 @@ export function KitDetail({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h1 className="text-3xl font-bold md:text-4xl">{kit.title}</h1>
+            <h1 className="text-3xl font-bold md:text-4xl"><T>{kit.title}</T></h1>
             {kit.price !== null && (
               <p className="mt-2 text-2xl font-bold">
-                {formatPrice(kit.price, kit.currency)}
+                <T>{formatPrice(kit.price, kit.currency)}</T>
               </p>
             )}
 
             {kit.description && (
               <p className="mt-6 leading-relaxed text-black/60">
-                {kit.description}
+                <T>{kit.description}</T>
               </p>
             )}
 
@@ -77,7 +79,7 @@ export function KitDetail({
               <div className="mt-4 flex flex-wrap gap-2">
                 {kit.tags.map((tag) => (
                   <span key={tag} className="rounded-full bg-black/5 px-3 py-1 text-xs">
-                    {tag}
+                    <T>{tag}</T>
                   </span>
                 ))}
               </div>
@@ -98,24 +100,24 @@ export function KitDetail({
                   rel="noreferrer"
                   className="block w-full rounded-2xl bg-black py-3.5 text-center text-sm font-medium text-white transition-colors hover:bg-black/80"
                   {...hoverProps}
-                >
+                ><T>
                   Buy now
-                </a>
+                </T></a>
               ) : (
                 <a
                   href={`mailto:${contactEmail}?subject=${encodeURIComponent(`Purchase: ${kit.title}`)}`}
                   className="flex items-center justify-center gap-2 rounded-2xl border border-black/10 py-3.5 text-sm font-medium transition-colors hover:bg-black hover:text-white"
                   {...hoverProps}
                 >
-                  <Mail size={16} />
+                  <Mail size={16} /><T>
                   Contact to purchase
-                </a>
+                </T></a>
               )}
             </div>
 
             {kit.tracks && kit.tracks.length > 0 && (
               <div className="mt-8">
-                <h3 className="mb-3 font-bold">Preview ({kit.tracks.length})</h3>
+                <h3 className="mb-3 font-bold"><T>Preview (</T>{kit.tracks.length})</h3>
                 <div className="space-y-1">
                   {kit.tracks.map((track, i) => {
                     const active = isCurrent(track.id) && isPlaying;
@@ -138,10 +140,10 @@ export function KitDetail({
                           <span className="h-8 w-8" />
                         )}
                         <span className="flex-1 truncate text-sm">
-                          {track.title}
+                          <T>{track.title}</T>
                         </span>
                         <span className="text-xs text-black/30">
-                          {formatDuration(track.duration_seconds)}
+                          <T>{formatDuration(track.duration_seconds)}</T>
                         </span>
                       </div>
                     );

@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/config";
@@ -8,7 +10,6 @@ import { SiteSettings } from "@/types";
 import {
   Field,
   TextInput,
-  TextArea,
   Toggle,
   Button,
   useToast,
@@ -108,15 +109,15 @@ export default function SettingsAdminPage() {
 
   return (
     <div className="p-6 md:p-8">
-      <h1 className="text-2xl font-bold">Settings</h1>
-      <p className="mt-1 text-sm text-white/40">
+      <h1 className="text-2xl font-bold"><T>Settings</T></h1>
+      <p className="mt-1 text-sm text-white/40"><T>
         Payments, socials, video and Telegram bot. Site texts are in Site Texts.
-      </p>
+      </T></p>
 
       <div className="mt-8 max-w-2xl space-y-6">
         {/* Contact */}
         <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-          <h2 className="text-sm font-bold text-white/70">Contact</h2>
+          <h2 className="text-sm font-bold text-white/70"><T>Contact</T></h2>
           <div className="mt-4 space-y-3">
             <Field label="Email for contact & purchases">
               <TextInput
@@ -145,7 +146,7 @@ export default function SettingsAdminPage() {
 
         {/* PayPal */}
         <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-          <h2 className="text-sm font-bold text-white/70">PayPal payments</h2>
+          <h2 className="text-sm font-bold text-white/70"><T>PayPal payments</T></h2>
           <div className="mt-4 space-y-3">
             <Toggle
               checked={settings.payments.enabled}
@@ -175,7 +176,7 @@ export default function SettingsAdminPage() {
 
         {/* Featured Video */}
         <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-          <h2 className="text-sm font-bold text-white/70">Featured video (homepage)</h2>
+          <h2 className="text-sm font-bold text-white/70"><T>Featured video (homepage)</T></h2>
           <div className="mt-4 space-y-3">
             <Toggle
               checked={settings.featured_video.enabled}
@@ -213,7 +214,7 @@ export default function SettingsAdminPage() {
                 disabled={fetchingYt}
                 {...hoverProps}
               >
-                {fetchingYt ? "Fetching..." : "Pull video info from YouTube"}
+                <T>{fetchingYt ? "Fetching..." : "Pull video info from YouTube"}</T>
               </Button>
             )}
 
@@ -229,11 +230,11 @@ export default function SettingsAdminPage() {
                 )}
                 <div className="min-w-0">
                   <p className="truncate text-sm font-medium text-white">
-                    {settings.featured_video.video_title}
+                    <T>{settings.featured_video.video_title}</T>
                   </p>
                   {settings.featured_video.author && (
                     <p className="truncate text-xs text-white/40">
-                      {settings.featured_video.author}
+                      <T>{settings.featured_video.author}</T>
                     </p>
                   )}
                 </div>
@@ -260,10 +261,10 @@ export default function SettingsAdminPage() {
 
         {/* Social */}
         <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-          <h2 className="text-sm font-bold text-white/70">Social links</h2>
-          <p className="mt-1 text-xs text-white/30">
+          <h2 className="text-sm font-bold text-white/70"><T>Social links</T></h2>
+          <p className="mt-1 text-xs text-white/30"><T>
             Toggle each link on/off. Only enabled links appear in the footer.
-          </p>
+          </T></p>
           <div className="mt-4 space-y-4">
             {socialKeys.map((key) => (
               <div key={key} className="rounded-xl bg-white/5 p-3">
@@ -302,12 +303,12 @@ export default function SettingsAdminPage() {
 
         {/* Telegram Bot */}
         <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-          <h2 className="text-sm font-bold text-white/70">Telegram bot</h2>
-          <p className="mt-1 text-xs text-white/30">
-            Upload tracks to the site via Telegram. Bot starts with{" "}
-            <code className="text-[#facc15]">npm run dev</code>. Restart after
+          <h2 className="text-sm font-bold text-white/70"><T>Telegram bot</T></h2>
+          <p className="mt-1 text-xs text-white/30"><T>
+            Upload tracks to the site via Telegram. Bot starts with</T><T>{" "}</T>
+            <code className="text-[#facc15]"><T>npm run dev</T></code><T>. Restart after
             saving.
-          </p>
+          </T></p>
           <div className="mt-4 space-y-3">
             <Toggle
               checked={settings.telegram.enabled}
@@ -348,20 +349,20 @@ export default function SettingsAdminPage() {
               />
             </Field>
             <div className="rounded-xl bg-white/5 p-3 text-xs text-white/50">
-              <p className="font-medium text-white/70">Bot commands:</p>
+              <p className="font-medium text-white/70"><T>Bot commands:</T></p>
               <ul className="mt-2 space-y-1">
-                <li>/addbeat — upload a new beat</li>
-                <li>/addmix — upload mixing work</li>
-                <li>/list — show recent works</li>
-                <li>/delete &lt;id&gt; — delete a work</li>
-                <li>/cancel — cancel current upload</li>
+                <li><T>/addbeat — upload a new beat</T></li>
+                <li><T>/addmix — upload mixing work</T></li>
+                <li><T>/list — show recent works</T></li>
+                <li><T>/delete &lt;id&gt; — delete a work</T></li>
+                <li><T>/cancel — cancel current upload</T></li>
               </ul>
             </div>
           </div>
         </section>
 
         <Button onClick={handleSave} disabled={saving} {...hoverProps}>
-          {saving ? "Saving..." : "Save all settings"}
+          <T>{saving ? "Saving..." : "Save all settings"}</T>
         </Button>
       </div>
     </div>

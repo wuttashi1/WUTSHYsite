@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T, LocalizedInput, LocalizedTextarea } from "@/components/LocaleProvider";
 import { AnimatePresence, motion } from "framer-motion";
 import { X, CheckCircle2, AlertCircle, Trash2 } from "lucide-react";
 import {
@@ -8,6 +10,7 @@ import {
   useState,
   useCallback,
   useRef,
+  useEffect,
   ReactNode,
 } from "react";
 
@@ -24,9 +27,9 @@ export function Field({
 }) {
   return (
     <label className="block">
-      <span className="text-xs font-medium text-white/50">{label}</span>
+      <span className="text-xs font-medium text-white/50"><T>{label}</T></span>
       {children}
-      {hint && <span className="mt-1 block text-[11px] text-white/30">{hint}</span>}
+      {hint && <span className="mt-1 block text-[11px] text-white/30"><T>{hint}</T></span>}
     </label>
   );
 }
@@ -35,13 +38,13 @@ const inputCls =
   "mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white outline-none transition-colors focus:border-white/30 focus:bg-white/10";
 
 export function TextInput(props: React.InputHTMLAttributes<HTMLInputElement>) {
-  return <input {...props} className={`${inputCls} ${props.className || ""}`} />;
+  return <LocalizedInput {...props} className={`${inputCls} ${props.className || ""}`} />;
 }
 
 export function TextArea(
   props: React.TextareaHTMLAttributes<HTMLTextAreaElement>
 ) {
-  return <textarea {...props} className={`${inputCls} ${props.className || ""}`} />;
+  return <LocalizedTextarea {...props} className={`${inputCls} ${props.className || ""}`} />;
 }
 
 export function Select(props: React.SelectHTMLAttributes<HTMLSelectElement>) {
@@ -64,6 +67,8 @@ export function Toggle({
   return (
     <button
       type="button"
+      role="switch"
+      aria-checked={checked}
       onClick={() => onChange(!checked)}
       className="flex items-center gap-2.5 text-sm text-white/80"
     >
@@ -80,7 +85,7 @@ export function Toggle({
           }`}
         />
       </span>
-      {label}
+      <T>{label}</T>
     </button>
   );
 }
@@ -109,6 +114,31 @@ export function Button({
 
 /* ---------- Modal ---------- */
 
+function useDialogFocus(open: boolean, close: () => void) {
+  const ref = useRef<HTMLDivElement>(null);
+  const closeRef = useRef(close);
+  closeRef.current = close;
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const dialog = ref.current;
+    const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>('button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), a[href], [tabindex="0"]') || []);
+    (focusable()[0] || dialog)?.focus();
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") { event.preventDefault(); closeRef.current(); }
+      if (event.key === "Tab") {
+        const elements = focusable(); const first = elements[0]; const last = elements[elements.length - 1];
+        if (!first) { event.preventDefault(); return; }
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    }
+    document.addEventListener("keydown", onKey);
+    return () => { document.removeEventListener("keydown", onKey); previous?.focus(); };
+  }, [open]);
+  return ref;
+}
+
 export function Modal({
   open,
   onClose,
@@ -120,6 +150,7 @@ export function Modal({
   title: string;
   children: ReactNode;
 }) {
+  const dialogRef = useDialogFocus(open, onClose);
   return (
     <AnimatePresence>
       {open && (
@@ -131,6 +162,11 @@ export function Modal({
           onClick={onClose}
         >
           <motion.div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={title}
+            tabIndex={-1}
             initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -139,9 +175,10 @@ export function Modal({
             className="mb-16 w-full max-w-lg rounded-2xl border border-white/10 bg-[#141414] p-6 shadow-2xl"
           >
             <div className="mb-5 flex items-center justify-between">
-              <h2 className="text-lg font-bold">{title}</h2>
+              <h2 className="text-lg font-bold"><T>{title}</T></h2>
               <button
                 onClick={onClose}
+                aria-label="Close"
                 className="text-white/40 transition-colors hover:text-white"
               >
                 <X size={18} />
@@ -201,7 +238,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               ) : (
                 <AlertCircle size={16} />
               )}
-              {t.message}
+              <T>{t.message}</T>
             </motion.div>
           ))}
         </AnimatePresence>
@@ -254,6 +291,7 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
     resolverRef.current = null;
     setState(null);
   };
+  const dialogRef = useDialogFocus(!!state, () => close(false));
 
   return (
     <ConfirmContext.Provider value={{ confirm }}>
@@ -268,6 +306,11 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
             onClick={() => close(false)}
           >
             <motion.div
+              ref={dialogRef}
+              role="alertdialog"
+              aria-modal="true"
+              aria-label={state.title}
+              tabIndex={-1}
               initial={{ opacity: 0, y: 24, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.96 }}
@@ -280,23 +323,23 @@ export function ConfirmProvider({ children }: { children: ReactNode }) {
                   <Trash2 size={18} />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold">{state.title}</h3>
-                  <p className="mt-1 text-sm text-white/50">{state.message}</p>
+                  <h3 className="text-base font-bold"><T>{state.title}</T></h3>
+                  <p className="mt-1 text-sm text-white/50"><T>{state.message}</T></p>
                 </div>
               </div>
               <div className="mt-6 flex justify-end gap-2">
                 <button
                   onClick={() => close(false)}
                   className="rounded-xl border border-white/15 px-4 py-2.5 text-sm font-medium transition-colors hover:bg-white/10"
-                >
+                ><T>
                   Cancel
-                </button>
+                </T></button>
                 <button
                   onClick={() => close(true)}
                   autoFocus
                   className="rounded-xl bg-red-500 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-red-600"
                 >
-                  {state.confirmLabel}
+                  <T>{state.confirmLabel}</T>
                 </button>
               </div>
             </motion.div>

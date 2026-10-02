@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T, LocalizedInput } from "@/components/LocaleProvider";
 import { useEffect, useState, Suspense, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
@@ -234,16 +236,16 @@ function WorksAdminContent() {
     <div className="p-6 md:p-8">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold">Works</h1>
-          <p className="mt-1 text-sm text-white/40">
+          <h1 className="text-2xl font-bold"><T>Works</T></h1>
+          <p className="mt-1 text-sm text-white/40"><T>
             Beats, mixing portfolio, and placements.
-          </p>
+          </T></p>
         </div>
         <div className="flex flex-wrap gap-2">
           {(["beat", "mixing", "placement"] as WorkType[]).map((t) => (
             <Button key={t} variant="ghost" onClick={() => openNew(t)} {...hoverProps}>
               <span className="inline-flex items-center gap-1 capitalize">
-                <Plus size={14} /> {t}
+                <Plus size={14} /> <T>{t}</T>
               </span>
             </Button>
           ))}
@@ -253,7 +255,7 @@ function WorksAdminContent() {
       <div className="mt-6 flex flex-wrap items-center gap-2">
         <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
           <Search size={14} className="text-white/30" />
-          <input
+          <LocalizedInput
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search..."
@@ -269,19 +271,19 @@ function WorksAdminContent() {
                 filter === t ? "bg-white text-black" : "text-white/50 hover:text-white"
               }`}
             >
-              {t}
+              <T>{t}</T>
             </button>
           ))}
         </div>
       </div>
 
       {loading ? (
-        <p className="mt-8 text-white/40">Loading...</p>
+        <p className="mt-8 text-white/40"><T>Loading...</T></p>
       ) : filtered.length === 0 ? (
         <div className="mt-12 rounded-2xl border border-dashed border-white/10 py-16 text-center text-white/40">
-          <Music className="mx-auto mb-3" size={28} />
+          <Music className="mx-auto mb-3" size={28} /><T>
           Nothing here yet. Add your first work.
-        </div>
+        </T></div>
       ) : (
         <div className="mt-4 space-y-2">
           {filtered.map((work) => (
@@ -292,18 +294,18 @@ function WorksAdminContent() {
               <span
                 className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${typeColors[work.type]}`}
               >
-                {work.type}
+                <T>{work.type}</T>
               </span>
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium">{work.title}</p>
+                <p className="truncate text-sm font-medium"><T>{work.title}</T></p>
                 {work.artist && (
-                  <p className="truncate text-xs text-white/40">{work.artist}</p>
+                  <p className="truncate text-xs text-white/40"><T>{work.artist}</T></p>
                 )}
               </div>
               {work.audio_url && (
-                <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] text-white/50">
+                <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] text-white/50"><T>
                   audio
-                </span>
+                </T></span>
               )}
               {work.is_featured && (
                 <span className="text-[10px] text-[#facc15]">★</span>
@@ -339,9 +341,9 @@ function WorksAdminContent() {
                 value={form.type}
                 onChange={(e) => set("type", e.target.value as WorkType)}
               >
-                <option value="beat">Beat</option>
-                <option value="mixing">Mixing</option>
-                <option value="placement">Placement</option>
+                <option value="beat"><T>Beat</T></option>
+                <option value="mixing"><T>Mixing</T></option>
+                <option value="placement"><T>Placement</T></option>
               </Select>
             </Field>
             <Field label="Sort order">
@@ -450,9 +452,9 @@ function WorksAdminContent() {
                 }
               >
                 <option value="">—</option>
-                <option value="track">Track</option>
-                <option value="playlist">Playlist</option>
-                <option value="album">Album</option>
+                <option value="track"><T>Track</T></option>
+                <option value="playlist"><T>Playlist</T></option>
+                <option value="album"><T>Album</T></option>
               </Select>
             </Field>
           </div>
@@ -464,7 +466,7 @@ function WorksAdminContent() {
               disabled={fetchingSpotify}
               {...hoverProps}
             >
-              {fetchingSpotify ? "Fetching..." : "Pull cover & data from Spotify"}
+              <T>{fetchingSpotify ? "Fetching..." : "Pull cover & data from Spotify"}</T>
             </Button>
           )}
 
@@ -478,7 +480,7 @@ function WorksAdminContent() {
 
           {form.type === "placement" && (
             <Field label="Accent color">
-              <input
+              <LocalizedInput
                 type="color"
                 value={form.accent_color}
                 onChange={(e) => set("accent_color", e.target.value)}
@@ -495,11 +497,11 @@ function WorksAdminContent() {
 
           <div className="flex gap-2 pt-2">
             <Button onClick={handleSave} disabled={saving} {...hoverProps}>
-              {saving ? "Saving..." : editing ? "Update" : "Create"}
+              <T>{saving ? "Saving..." : editing ? "Update" : "Create"}</T>
             </Button>
-            <Button variant="ghost" onClick={() => setShowForm(false)}>
+            <Button variant="ghost" onClick={() => setShowForm(false)}><T>
               Cancel
-            </Button>
+            </T></Button>
           </div>
         </div>
       </Modal>

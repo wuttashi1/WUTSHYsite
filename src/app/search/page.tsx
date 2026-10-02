@@ -1,3 +1,5 @@
+
+import { T } from "@/components/LocaleProvider";
 import { searchContent } from "@/lib/queries";
 import { WorkCard } from "@/components/WorkCard";
 import { PlacementCard } from "@/components/PlacementCard";
@@ -37,14 +39,14 @@ export default async function SearchPage({ searchParams }: Props) {
         />
 
         {query && total === 0 && (
-          <p className="mt-8 text-black/40">
+          <p className="mt-8 text-black/40"><T>
             Nothing matched your search. Try a different keyword.
-          </p>
+          </T></p>
         )}
 
         {beats.length > 0 && (
           <div className="mt-10">
-            <h2 className="mb-4 text-lg font-bold">Beats & Mixing</h2>
+            <h2 className="mb-4 text-lg font-bold"><T>Beats & Mixing</T></h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {beats.map((work, i) => (
                 <WorkCard key={work.id} work={work} index={i} queue={beats} />
@@ -55,7 +57,7 @@ export default async function SearchPage({ searchParams }: Props) {
 
         {placements.length > 0 && (
           <div className="mt-12">
-            <h2 className="mb-4 text-lg font-bold">Placements</h2>
+            <h2 className="mb-4 text-lg font-bold"><T>Placements</T></h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {placements.map((work, i) => (
                 <PlacementCard
@@ -71,7 +73,7 @@ export default async function SearchPage({ searchParams }: Props) {
 
         {kits.length > 0 && (
           <div className="mt-12">
-            <h2 className="mb-4 text-lg font-bold">Drum Kits</h2>
+            <h2 className="mb-4 text-lg font-bold"><T>Drum Kits</T></h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {kits.map((kit, i) => (
                 <DrumKitCard key={kit.id} kit={kit} index={i} />

@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import { SiteSettings } from "@/types";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -57,7 +59,7 @@ export function HeroSection({ settings, items }: HeroSectionProps) {
   }, [cards.length, phrases.length]);
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-28">
+    <section className="relative isolate overflow-hidden py-16 md:py-28">
       <BackgroundBlobs />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2 md:px-6">
@@ -98,12 +100,12 @@ export function HeroSection({ settings, items }: HeroSectionProps) {
                           card.accent_color || "#111",
                       }}
                     >
-                      <span className="text-6xl font-black text-black/20">W</span>
+                      <span className="text-6xl font-black text-black/20"><T>W</T></span>
                     </div>
                   )}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
                     <p className="text-sm font-semibold text-white">
-                      {card.title}
+                      <T>{card.title}</T>
                     </p>
                   </div>
                 </div>
@@ -119,7 +121,7 @@ export function HeroSection({ settings, items }: HeroSectionProps) {
             transition={{ duration: 0.5 }}
             className="text-sm font-medium text-black/40"
           >
-            {settings.content.hero.tagline}
+            <T>{settings.content.hero.tagline}</T>
           </motion.p>
 
           <h1 className="mt-2 text-4xl font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
@@ -129,7 +131,7 @@ export function HeroSection({ settings, items }: HeroSectionProps) {
               transition={{ duration: 0.5, delay: 0.05 }}
               className="block"
             >
-              {settings.content.hero.title_prefix}
+              <T>{settings.content.hero.title_prefix}</T>
             </motion.span>
             <span className="relative block h-[1.15em] overflow-hidden">
               <AnimatePresence mode="wait">
@@ -143,7 +145,7 @@ export function HeroSection({ settings, items }: HeroSectionProps) {
                     GRADIENTS[phraseIdx % GRADIENTS.length]
                   } bg-clip-text text-transparent`}
                 >
-                  {phrases[phraseIdx] || phrases[0]}
+                  <T>{phrases[phraseIdx] || phrases[0]}</T>
                 </motion.span>
               </AnimatePresence>
             </span>
@@ -155,7 +157,7 @@ export function HeroSection({ settings, items }: HeroSectionProps) {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="mt-5 max-w-md text-base text-black/50 md:text-lg"
           >
-            {settings.content.hero.subtitle}
+            <T>{settings.content.hero.subtitle}</T>
           </motion.p>
 
           <motion.div
@@ -169,14 +171,14 @@ export function HeroSection({ settings, items }: HeroSectionProps) {
               className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-transform hover:scale-105"
               {...hoverProps}
             >
-              {settings.content.hero.cta_primary}
+              <T>{settings.content.hero.cta_primary}</T>
             </Link>
             <Link
               href="/drum-kits"
               className="rounded-full border border-black/10 px-6 py-3 text-sm font-medium transition-colors hover:bg-black/5"
               {...hoverProps}
             >
-              {settings.content.hero.cta_secondary}
+              <T>{settings.content.hero.cta_secondary}</T>
             </Link>
           </motion.div>
         </div>

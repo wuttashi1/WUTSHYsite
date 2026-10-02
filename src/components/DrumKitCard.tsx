@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import { DrumKit } from "@/types";
 import { formatPrice, formatDuration, kitTrackToTrack } from "@/lib/data";
 import { motion } from "framer-motion";
@@ -44,11 +46,11 @@ export function DrumKitCard({ kit, index = 0 }: DrumKitCardProps) {
 
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-2">
-            <h3 className="truncate font-bold">{kit.title}</h3>
+            <h3 className="truncate font-bold"><T>{kit.title}</T></h3>
             {kit.is_new && (
-              <span className="shrink-0 rounded-full bg-[#4ade80] px-2 py-0.5 text-[10px] font-bold text-black">
+              <span className="shrink-0 rounded-full bg-[#4ade80] px-2 py-0.5 text-[10px] font-bold text-black"><T>
                 NEW
-              </span>
+              </T></span>
             )}
           </div>
 
@@ -59,7 +61,7 @@ export function DrumKitCard({ kit, index = 0 }: DrumKitCardProps) {
                   key={tag}
                   className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] text-white/60"
                 >
-                  {tag}
+                  <T>{tag}</T>
                 </span>
               ))}
             </div>
@@ -88,9 +90,9 @@ export function DrumKitCard({ kit, index = 0 }: DrumKitCardProps) {
                 ) : (
                   <span className="h-8 w-8" />
                 )}
-                <span className="flex-1 truncate">{track.title}</span>
+                <span className="flex-1 truncate"><T>{track.title}</T></span>
                 <span className="text-xs text-white/30">
-                  {formatDuration(track.duration_seconds)}
+                  <T>{formatDuration(track.duration_seconds)}</T>
                 </span>
               </div>
             );
@@ -99,14 +101,14 @@ export function DrumKitCard({ kit, index = 0 }: DrumKitCardProps) {
       )}
 
       <div className="mt-auto flex items-center justify-between border-t border-white/5 px-5 py-4">
-        <span className="font-bold">{formatPrice(kit.price, kit.currency)}</span>
+        <span className="font-bold"><T>{formatPrice(kit.price, kit.currency)}</T></span>
         <Link
           href={`/drum-kits/${kit.id}`}
           className="rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition-colors hover:bg-white/90"
           {...hoverProps}
-        >
+        ><T>
           View
-        </Link>
+        </T></Link>
       </div>
     </motion.article>
   );

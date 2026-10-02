@@ -1,0 +1,238 @@
+Welcome to Food Planner 🥑|Добро пожаловать в Food Planner 🥑|Ласкаво просимо до Food Planner 🥑|Willkommen bei Food Planner 🥑
+Your meals and shopping list, together. What shall we plan?|Меню и покупки в одном месте. Что запланируем?|Меню та покупки в одному місці. Що заплануємо?|Mahlzeiten und Einkaufsliste an einem Ort. Was planen wir?
+MONDAY 🍽|ПОНЕДЕЛЬНИК 🍽|ПОНЕДІЛОК 🍽|MONTAG 🍽
+Breakfast · Oatmeal with banana|Завтрак · Овсянка с бананом|Сніданок · Вівсянка з бананом|Frühstück · Haferbrei mit Banane
+Lunch · Chicken, rice and vegetables|Обед · Курица, рис и овощи|Обід · Курка, рис та овочі|Mittagessen · Hähnchen, Reis und Gemüse
+Dinner · Vegetable omelette|Ужин · Омлет с овощами|Вечеря · Омлет з овочами|Abendessen · Gemüseomelett
+Sample menu · one person's portion|Пример меню · порция на одного|Приклад меню · порція на одного|Beispielmenü · eine Portion
+SHOPPING LIST 🛒|СПИСОК ПОКУПОК 🛒|СПИСОК ПОКУПОК 🛒|EINKAUFSLISTE 🛒
+☐ Oats · 80 g|☐ Овсянка · 80 г|☐ Вівсянка · 80 г|☐ Haferflocken · 80 g
+☐ Banana · 1|☐ Банан · 1|☐ Банан · 1|☐ Banane · 1
+☐ Chicken · 150 g|☐ Курица · 150 г|☐ Курка · 150 г|☐ Hähnchen · 150 g
+☐ Rice · 80 g|☐ Рис · 80 г|☐ Рис · 80 г|☐ Reis · 80 g
+☐ Eggs · 2|☐ Яйца · 2|☐ Яйця · 2|☐ Eier · 2
+☐ Vegetables · 300 g|☐ Овощи · 300 г|☐ Овочі · 300 г|☐ Gemüse · 300 g
+YOUR WEEK 📅|ТВОЯ НЕДЕЛЯ 📅|ТВІЙ ТИЖДЕНЬ 📅|DEINE WOCHE 📅
+Mon · Chicken & rice|Пн · Курица с рисом|Пн · Курка з рисом|Mo · Hähnchen mit Reis
+Tue · Pasta & vegetables|Вт · Паста с овощами|Вт · Паста з овочами|Di · Nudeln mit Gemüse
+Wed · Fish & potatoes|Ср · Рыба с картофелем|Ср · Риба з картоплею|Mi · Fisch mit Kartoffeln
+Thu · Lentil soup|Чт · Чечевичный суп|Чт · Сочевичний суп|Do · Linsensuppe
+Fri · Chicken & buckwheat|Пт · Курица с гречкой|Пт · Курка з гречкою|Fr · Hähnchen mit Buchweizen
+Sat · Vegetable curry|Сб · Овощное карри|Сб · Овочеве карі|Sa · Gemüsecurry
+Sun · Homemade pizza|Вс · Домашняя пицца|Нд · Домашня піца|So · Hausgemachte Pizza
+Illustrative demo menu|Демонстрационный пример меню|Демонстраційний приклад меню|Beispielmenü zur Demonstration
+Ready for your next session? ⚡|Готов к тренировке? ⚡|Готовий до тренування? ⚡|Bereit fürs Training? ⚡
+Choose a workout, record a set or explore your progress.|Выбери тренировку, запиши подход или посмотри прогресс.|Вибери тренування, запиши підхід або переглянь прогрес.|Wähle ein Training, erfasse einen Satz oder sieh deinen Fortschritt.
+WORKOUT A 💪|ТРЕНИРОВКА A 💪|ТРЕНУВАННЯ A 💪|TRAINING A 💪
+1. Squat · 3 × 8|1. Приседания · 3 × 8|1. Присідання · 3 × 8|1. Kniebeugen · 3 × 8
+2. Bench press · 3 × 10|2. Жим лёжа · 3 × 10|2. Жим лежачи · 3 × 10|2. Bankdrücken · 3 × 10
+3. Row · 3 × 10|3. Тяга · 3 × 10|3. Тяга · 3 × 10|3. Rudern · 3 × 10
+First exercise: Squat|Первое упражнение: приседания|Перша вправа: присідання|Erste Übung: Kniebeugen
+Record your first set below.|Запиши первый подход кнопкой ниже.|Запиши перший підхід кнопкою нижче.|Erfasse unten deinen ersten Satz.
+SET RECORDED ✓|ПОДХОД ЗАПИСАН ✓|ПІДХІД ЗАПИСАНО ✓|SATZ GESPEICHERT ✓
+Squat · 40 kg × 8 · RIR 2|Приседания · 40 кг × 8 · RIR 2|Присідання · 40 кг × 8 · RIR 2|Kniebeugen · 40 kg × 8 · RIR 2
+Rest: 90 seconds|Отдых: 90 секунд|Відпочинок: 90 секунд|Pause: 90 Sekunden
+Sample set saved in this demo session.|Пример подхода записан в этой демосессии.|Приклад підходу записано в цій демосесії.|Beispielsatz in dieser Demo-Sitzung gespeichert.
+TRAINING JOURNAL 📈|ДНЕВНИК ТРЕНИРОВОК 📈|ЩОДЕННИК ТРЕНУВАНЬ 📈|TRAININGSTAGEBUCH 📈
+Latest session · Workout A|Последняя сессия · Тренировка A|Остання сесія · Тренування A|Letzte Einheit · Training A
+Personal record · Squat 40 kg × 8|Личный рекорд · Приседания 40 кг × 8|Особистий рекорд · Присідання 40 кг × 8|Persönlicher Rekord · Kniebeugen 40 kg × 8
+Illustrative sample history|Демонстрационная история|Демонстраційна історія|Beispielverlauf
+DotaAccept · Control panel|DotaAccept · Панель управления|DotaAccept · Панель керування|DotaAccept · Steuerung
+Demo PC connected. Choose an action to send to the desktop app.|Демо-ПК подключён. Выбери действие для приложения.|Демо-ПК підключено. Вибери дію для застосунку.|Demo-PC verbunden. Wähle eine Aktion für die Desktop-App.
+ACTION SENT ✓|ДЕЙСТВИЕ ОТПРАВЛЕНО ✓|ДІЮ НАДІСЛАНО ✓|AKTION GESENDET ✓
+The configured accept action was executed on the demo PC.|Настроенное действие принятия выполнено на демо-ПК.|Налаштовану дію прийняття виконано на демо-ПК.|Die konfigurierte Annahme-Aktion wurde am Demo-PC ausgeführt.
+Started manually, just like F6 in the application.|Запущено вручную, как по F6 в приложении.|Запущено вручну, як за F6 у застосунку.|Manuell gestartet, wie mit F6 in der App.
+HERO PROFILE 🎮|ПРОФИЛЬ ГЕРОЯ 🎮|ПРОФІЛЬ ГЕРОЯ 🎮|HELDENPROFIL 🎮
+Sample profile selected. The recorded click sequence has been executed.|Выбран пример профиля. Записанная последовательность кликов выполнена.|Вибрано приклад профілю. Записану послідовність кліків виконано.|Beispielprofil gewählt. Die aufgezeichnete Klickfolge wurde ausgeführt.
+Desktop shortcut: F7|Горячая клавиша: F7|Гаряча клавіша: F7|Tastenkürzel: F7
+STOPPED ⏹|ОСТАНОВЛЕНО ⏹|ЗУПИНЕНО ⏹|GESTOPPT ⏹
+The current action has been stopped.|Текущее действие остановлено.|Поточну дію зупинено.|Die aktuelle Aktion wurde gestoppt.
+Desktop shortcut: F8|Горячая клавиша: F8|Гаряча клавіша: F8|Tastenkürzel: F8
+Voice channel: Studio|Голосовой канал: Studio|Голосовий канал: Studio|Sprachkanal: Studio
+Demo role: Administrator|Демо-роль: Администратор|Демо-роль: Адміністратор|Demo-Rolle: Administrator
+Control the members of your current voice channel.|Управляй участниками текущего голосового канала.|Керуй учасниками поточного голосового каналу.|Verwalte die Mitglieder deines aktuellen Sprachkanals.
+MEMBERS MUTED 🔇|МИКРОФОНЫ ВЫКЛЮЧЕНЫ 🔇|МІКРОФОНИ ВИМКНЕНО 🔇|MITGLIEDER STUMMGESCHALTET 🔇
+WUTSHY · muted|WUTSHY · микрофон выключен|WUTSHY · мікрофон вимкнено|WUTSHY · stummgeschaltet
+Alex · muted|Alex · микрофон выключен|Alex · мікрофон вимкнено|Alex · stummgeschaltet
+Sam · muted|Sam · микрофон выключен|Sam · мікрофон вимкнено|Sam · stummgeschaltet
+Administrator permission checked in the real bot.|В настоящем боте проверяются права администратора.|У справжньому боті перевіряються права адміністратора.|Der echte Bot prüft Administratorrechte.
+MEMBERS UNMUTED 🔊|МИКРОФОНЫ ВКЛЮЧЕНЫ 🔊|МІКРОФОНИ УВІМКНЕНО 🔊|MITGLIEDER FREIGESCHALTET 🔊
+WUTSHY · speaking enabled|WUTSHY · микрофон включён|WUTSHY · мікрофон увімкнено|WUTSHY · Mikrofon aktiv
+Alex · speaking enabled|Alex · микрофон включён|Alex · мікрофон увімкнено|Alex · Mikrofon aktiv
+Sam · speaking enabled|Sam · микрофон включён|Sam · мікрофон увімкнено|Sam · Mikrofon aktiv
+Welcome to the anime corner ✦|Добро пожаловать в аниме-уголок ✦|Ласкаво просимо до аніме-куточка ✦|Willkommen in der Anime-Ecke ✦
+Explore an anime card, build your list and open a discussion.|Открой карточку аниме, составь список и начни обсуждение.|Відкрий картку аніме, склади список і почни обговорення.|Entdecke Anime-Karten, erstelle deine Liste und starte eine Diskussion.
+TV · 26 episodes · 1998|ТВ · 26 серий · 1998|ТБ · 26 серій · 1998|TV · 26 Folgen · 1998
+A crew of bounty hunters travels through space.|Команда охотников за головами путешествует по космосу.|Команда мисливців за головами подорожує космосом.|Eine Gruppe Kopfgeldjäger reist durchs Weltall.
+Sample card · the real bot uses anime APIs.|Пример карточки · настоящий бот использует аниме-API.|Приклад картки · справжній бот використовує аніме-API.|Beispielkarte · der echte Bot nutzt Anime-APIs.
+ADDED TO YOUR LIST ✓|ДОБАВЛЕНО В СПИСОК ✓|ДОДАНО ДО СПИСКУ ✓|ZUR LISTE HINZUGEFÜGT ✓
+Status · Plan to watch|Статус · Планирую смотреть|Статус · Планую дивитися|Status · Geplant
+Saved for this demo session.|Сохранено на время демосессии.|Збережено на час демосесії.|Für diese Demo-Sitzung gespeichert.
+A place for your community's discussion.|Место для обсуждения в твоём сообществе.|Місце для обговорення у твоїй спільноті.|Ein Ort für Diskussionen in deiner Community.
+Demo topic opened. The real bot manages Discord forum topics.|Открыта демо-тема. Настоящий бот управляет темами форума Discord.|Відкрито демо-тему. Справжній бот керує темами форуму Discord.|Demo-Thema geöffnet. Der echte Bot verwaltet Discord-Forenthemen.
+Last updated: 2026|Обновлено: 2026|Оновлено: 2026|Zuletzt aktualisiert: 2026
+1. Acceptance of Terms|1. Принятие условий|1. Прийняття умов|1. Annahme der Bedingungen
+By accessing and using the WUTSHY website, you agree to these Terms of Service.|Посещая и используя сайт WUTSHY, вы соглашаетесь с этими условиями использования.|Відвідуючи та використовуючи сайт WUTSHY, ви погоджуєтеся з цими умовами використання.|Mit dem Zugriff auf die WUTSHY-Website und ihrer Nutzung akzeptierst du diese Nutzungsbedingungen.
+2. Digital Products|2. Цифровые товары|2. Цифрові товари|2. Digitale Produkte
+Beats, drum kits, and other digital products sold through this site are licensed for use in your own musical productions unless otherwise stated at the time of purchase.|Биты, драм-киты и другие цифровые товары лицензируются для использования в ваших музыкальных произведениях, если при покупке не указано иное.|Біти, драм-кіти та інші цифрові товари ліцензуються для використання у ваших музичних творах, якщо під час купівлі не зазначено інше.|Beats, Drum-Kits und andere digitale Produkte dieser Website sind für eigene Musikproduktionen lizenziert, sofern beim Kauf nichts anderes angegeben wird.
+3. Payments|3. Оплата|3. Оплата|3. Zahlungen
+All payments are processed through third-party providers. WUTSHY is not responsible for issues caused by payment processors.|Все платежи обрабатываются сторонними провайдерами. WUTSHY не несёт ответственности за проблемы, вызванные платёжными сервисами.|Усі платежі обробляються сторонніми провайдерами. WUTSHY не несе відповідальності за проблеми, спричинені платіжними сервісами.|Alle Zahlungen werden durch Drittanbieter abgewickelt. WUTSHY ist nicht für Probleme verantwortlich, die durch Zahlungsdienstleister verursacht werden.
+4. Refunds|4. Возвраты|4. Повернення|4. Rückerstattungen
+Due to the digital nature of the products, all sales are final unless required by applicable law or agreed otherwise in writing.|В связи с цифровой природой товаров покупки не подлежат возврату, если применимое законодательство или письменное соглашение не предусматривает иное.|Через цифрову природу товарів покупки не підлягають поверненню, якщо чинне законодавство або письмова угода не передбачає інше.|Aufgrund der digitalen Beschaffenheit der Produkte sind Verkäufe endgültig, sofern geltendes Recht oder eine schriftliche Vereinbarung nichts anderes vorsieht.
+5. Intellectual Property|5. Интеллектуальная собственность|5. Інтелектуальна власність|5. Geistiges Eigentum
+All content on this website — including beats, kits, artwork, and branding — remains the property of WUTSHY unless a separate license agreement is provided.|Весь контент сайта, включая биты, киты, графику и фирменный стиль, остаётся собственностью WUTSHY, если не предоставлено отдельное лицензионное соглашение.|Увесь контент сайту, включно з бітами, кітами, графікою та фірмовим стилем, залишається власністю WUTSHY, якщо не надано окремої ліцензійної угоди.|Alle Inhalte dieser Website, einschließlich Beats, Kits, Grafiken und Markenauftritt, bleiben Eigentum von WUTSHY, sofern keine gesonderte Lizenzvereinbarung vorliegt.
+6. Contact|6. Контакты|6. Контакти|6. Kontakt
+For questions about these terms, contact us using the email listed on the website.|По вопросам об этих условиях напишите на почту, указанную на сайте.|Щодо цих умов напишіть на пошту, зазначену на сайті.|Bei Fragen zu diesen Bedingungen kontaktiere uns über die auf der Website angegebene E-Mail-Adresse.
+1. Information We Collect|1. Какие данные мы собираем|1. Які дані ми збираємо|1. Erfasste Informationen
+We may collect your email address when you contact us or complete a purchase. Payment information is handled by third-party payment providers and is not stored on our servers.|Мы можем получать ваш адрес электронной почты при обращении или покупке. Платёжные данные обрабатываются сторонними провайдерами и не хранятся на наших серверах.|Ми можемо отримувати вашу електронну адресу під час звернення або купівлі. Платіжні дані обробляються сторонніми провайдерами та не зберігаються на наших серверах.|Wir können deine E-Mail-Adresse erfassen, wenn du uns kontaktierst oder etwas kaufst. Zahlungsdaten werden von Drittanbietern verarbeitet und nicht auf unseren Servern gespeichert.
+2. How We Use Information|2. Как мы используем данные|2. Як ми використовуємо дані|2. Verwendung der Informationen
+We use your information to respond to inquiries, process orders, and improve the website experience.|Мы используем данные для ответа на обращения, обработки заказов и улучшения сайта.|Ми використовуємо дані для відповіді на звернення, обробки замовлень і поліпшення сайту.|Wir verwenden deine Informationen zur Beantwortung von Anfragen, Bearbeitung von Bestellungen und Verbesserung der Website.
+3. Cookies|3. Файлы cookie|3. Файли cookie|3. Cookies
+This site may use cookies for authentication (admin panel) and basic functionality.|Сайт может использовать cookie для входа в админку и основных функций.|Сайт може використовувати cookie для входу до адмінпанелі та основних функцій.|Diese Website kann Cookies zur Authentifizierung im Adminbereich und für grundlegende Funktionen verwenden.
+4. Third-Party Services|4. Сторонние сервисы|4. Сторонні сервіси|4. Dienste Dritter
+We use services such as Supabase, PayPal, Spotify, and YouTube embeds. These services have their own privacy policies.|Мы используем Supabase, PayPal и встроенные Spotify и YouTube. У этих сервисов свои политики конфиденциальности.|Ми використовуємо Supabase, PayPal і вбудовані Spotify та YouTube. Ці сервіси мають власні політики конфіденційності.|Wir nutzen Dienste wie Supabase, PayPal sowie Spotify- und YouTube-Einbettungen. Diese Dienste haben eigene Datenschutzrichtlinien.
+5. Data Security|5. Безопасность данных|5. Безпека даних|5. Datensicherheit
+We take reasonable measures to protect your data, but no online service can guarantee complete security.|Мы принимаем разумные меры защиты данных, но ни один онлайн-сервис не может гарантировать полную безопасность.|Ми вживаємо розумних заходів захисту даних, але жоден онлайн-сервіс не може гарантувати повну безпеку.|Wir ergreifen angemessene Schutzmaßnahmen, aber kein Online-Dienst kann vollständige Sicherheit garantieren.
+6. Your Rights|6. Ваши права|6. Ваші права|6. Deine Rechte
+You may request access to or deletion of your personal data by contacting us via the email on this website.|Вы можете запросить доступ к своим данным или их удаление, написав на почту, указанную на сайте.|Ви можете запросити доступ до своїх даних або їх видалення, написавши на пошту, зазначену на сайті.|Du kannst über die auf dieser Website angegebene E-Mail-Adresse Auskunft über deine Daten oder deren Löschung beantragen.
+7. Contact|7. Контакты|7. Контакти|7. Kontakt
+For privacy-related questions, reach out using the contact email listed in the footer.|По вопросам конфиденциальности напишите на почту внизу сайта.|Щодо конфіденційності напишіть на пошту внизу сайту.|Bei Datenschutzfragen schreibe an die E-Mail-Adresse im Footer.
+Before (raw)|До (исходник)|До (оригінал)|Vorher (roh)
+After (mix)|После (микс)|Після (мікс)|Nachher (Mix)
+all|Все|Усі|Alle
+beat|Бит|Біт|Beat
+mixing|Сведение|Зведення|Mixing
+placement|Релиз|Реліз|Veröffentlichung
+Save all texts|Сохранить все тексты|Зберегти всі тексти|Alle Texte speichern
+Save all settings|Сохранить настройки|Зберегти налаштування|Einstellungen speichern
+Update|Обновить|Оновити|Aktualisieren
+Create|Создать|Створити|Erstellen
+New Work|Новая работа|Нова робота|Neues Werk
+Edit Work|Редактировать работу|Редагувати роботу|Werk bearbeiten
+New Drum Kit|Новый драм-кит|Новий драм-кіт|Neues Drum-Kit
+Edit Drum Kit|Редактировать драм-кит|Редагувати драм-кіт|Drum-Kit bearbeiten
+Upload file|Загрузить файл|Завантажити файл|Datei hochladen
+Uploading...|Загрузка...|Завантаження...|Wird hochgeladen...
+Supabase not connected|Supabase не подключён|Supabase не підключено|Supabase nicht verbunden
+Title is required|Укажите название|Укажіть назву|Titel erforderlich
+Site texts saved|Тексты сохранены|Тексти збережено|Website-Texte gespeichert
+Settings saved|Настройки сохранены|Налаштування збережено|Einstellungen gespeichert
+Work updated|Работа обновлена|Роботу оновлено|Werk aktualisiert
+Work created|Работа создана|Роботу створено|Werk erstellt
+Kit updated|Кит обновлён|Кіт оновлено|Kit aktualisiert
+Kit created|Кит создан|Кіт створено|Kit erstellt
+Track deleted|Трек удалён|Трек видалено|Track gelöscht
+Deleted|Удалено|Видалено|Gelöscht
+Nothing deleted — re-login and try again|Ничего не удалено — войдите снова и повторите|Нічого не видалено — увійдіть знову та повторіть|Nichts gelöscht — erneut anmelden und versuchen
+Paste a valid Spotify link first|Сначала вставьте ссылку Spotify|Спочатку вставте посилання Spotify|Zuerst einen gültigen Spotify-Link einfügen
+Could not fetch from Spotify|Не удалось получить данные Spotify|Не вдалося отримати дані Spotify|Spotify-Daten konnten nicht geladen werden
+Pulled cover & data from Spotify|Обложка и данные загружены из Spotify|Обкладинку та дані завантажено зі Spotify|Cover und Daten von Spotify geladen
+Failed to reach Spotify|Не удалось подключиться к Spotify|Не вдалося підключитися до Spotify|Spotify nicht erreichbar
+Paste a YouTube link first|Сначала вставьте ссылку YouTube|Спочатку вставте посилання YouTube|Zuerst einen YouTube-Link einfügen
+Could not fetch video info|Не удалось загрузить сведения о видео|Не вдалося завантажити відомості про відео|Videoinformationen konnten nicht geladen werden
+Pulled video info from YouTube|Сведения о видео загружены|Відомості про відео завантажено|Videoinformationen geladen
+Failed to reach YouTube|Не удалось подключиться к YouTube|Не вдалося підключитися до YouTube|YouTube nicht erreichbar
+Fetching...|Загрузка...|Завантаження...|Wird geladen...
+Fetch from Spotify|Загрузить из Spotify|Завантажити зі Spotify|Von Spotify laden
+Fetch from YouTube|Загрузить из YouTube|Завантажити з YouTube|Von YouTube laden
+Dark melodic trap with atmospheric pads and hard-hitting 808s.|Мрачный мелодичный трэп с атмосферными пэдами и мощными 808.|Похмурий мелодійний треп з атмосферними педами та потужними 808.|Düsterer melodischer Trap mit atmosphärischen Pads und druckvollen 808s.
+Bouncy new jazz vibes with swung drums and warm keys.|Упругий нью-джаз со свинговыми ударными и тёплыми клавишами.|Пружний нью-джаз зі свінговими ударними та теплими клавішами.|Lebendiger New Jazz mit swingenden Drums und warmen Keys.
+Full vocal mix and master. Clean low end, wide stereo image.|Полное сведение и мастеринг вокала. Чистый низ, широкое стерео.|Повне зведення та мастеринг вокалу. Чистий низ, широке стерео.|Kompletter Vocal-Mix und Master. Saubere Tiefen, breites Stereobild.
+Beat placed on a major release.|Бит в крупном релизе.|Біт у великому релізі.|Beat auf einer großen Veröffentlichung.
+Featured on a trending playlist.|В популярном плейлисте.|У популярному плейлісті.|In einer angesagten Playlist.
+Content language|Язык контента|Мова контенту|Inhaltssprache
+THE OTHER SIDE / CODE|ДРУГАЯ СТОРОНА / КОД|ІНША СТОРОНА / КОД|DIE ANDERE SEITE / CODE
+THE OTHER SIDE / SOUND|ДРУГАЯ СТОРОНА / ЗВУК|ІНША СТОРОНА / ЗВУК|DIE ANDERE SEITE / SOUND
+/ WEB EXPERIENCE|/ ВЕБ-ПРОЕКТ|/ ВЕБПРОЄКТ|/ WEBPROJEKT
+WUTSHY Admin|WUTSHY · Управление|WUTSHY · Керування|WUTSHY · Verwaltung
+Demo mode: use admin / wutshy|Демо: используйте admin / wutshy|Демо: використовуйте admin / wutshy|Demo: Verwende admin / wutshy
+Search results|Результаты поиска|Результати пошуку|Suchergebnisse
+Results found|Найдено результатов|Знайдено результатів|Gefundene Ergebnisse
+will be permanently removed.|будет удалено без возможности восстановления.|буде видалено без можливості відновлення.|wird dauerhaft gelöscht.
+will be removed from this kit.|будет удалено из этого кита.|буде видалено з цього кіта.|wird aus diesem Kit entfernt.
+and all its tracks will be permanently removed.|кит и все его треки будут удалены безвозвратно.|кіт і всі його треки буде видалено назавжди.|das Kit und alle Tracks werden dauerhaft gelöscht.
+Settings saved. Restart dev server for bot changes.|Настройки сохранены. Перезапустите сервер для изменений бота.|Налаштування збережено. Перезапустіть сервер для змін бота.|Einstellungen gespeichert. Server für Bot-Änderungen neu starten.
+Pull video info from YouTube|Загрузить сведения из YouTube|Завантажити відомості з YouTube|Videoinfos von YouTube laden
+Pull cover & data from Spotify|Загрузить обложку и данные Spotify|Завантажити обкладинку та дані Spotify|Cover und Daten von Spotify laden
+Audio preview|Аудиопревью|Аудіопрев'ю|Audiovorschau
+370 custom made sounds. Drums, oneshots, loops & midi included.|370 авторских звуков: ударные, ваншоты, лупы и MIDI.|370 авторських звуків: ударні, ваншоти, лупи та MIDI.|370 eigene Sounds: Drums, One-Shots, Loops und MIDI.
+Melodic loops and bouncy drums for your next cookup.|Мелодичные лупы и упругие ударные для следующего трека.|Мелодійні лупи та пружні ударні для наступного треку.|Melodische Loops und lebendige Drums für deinen nächsten Track.
+Beats card|Карточка битов|Картка бітів|Beat-Karte
+Mixing card|Карточка сведения|Картка зведення|Mixing-Karte
+Drum kits card|Карточка драм-китов|Картка драм-кітів|Drum-Kit-Karte
+Placements card|Карточка релизов|Картка релізів|Veröffentlichungskarte
+Beats page|Страница битов|Сторінка бітів|Beats-Seite
+Drum kits page|Страница драм-китов|Сторінка драм-кітів|Drum-Kit-Seite
+Placements (beats page)|Релизы на странице битов|Релізи на сторінці бітів|Veröffentlichungen auf der Beats-Seite
+Projects|Проекты|Проєкти|Projekte
+LET'S CONNECT / IT & DEVELOPMENT|ДАВАЙТЕ ЗНАКОМИТЬСЯ / IT И РАЗРАБОТКА|ПОЗНАЙОММОСЯ / IT ТА РОЗРОБКА|KONTAKT / IT & ENTWICKLUNG
+Let's build something useful.|Создадим что-то полезное.|Створімо щось корисне.|Lass uns etwas Nützliches bauen.
+Have a role or a project in mind? Let's talk about development, automation and the details that make a product work.|Есть вакансия или идея проекта? Обсудим разработку, автоматизацию и детали, из которых складывается хороший продукт.|Є вакансія або ідея проєкту? Обговорімо розробку, автоматизацію та деталі, з яких складається хороший продукт.|Du hast eine Stelle oder ein Projekt im Kopf? Lass uns über Entwicklung, Automatisierung und die Details eines guten Produkts sprechen.
+Development portfolio|Портфолио разработчика|Портфоліо розробника|Entwicklungsportfolio
+I build web applications, bots and tools that solve everyday problems. Explore the code, try the demos and see the products in action.|Создаю веб-приложения, ботов и инструменты для повседневных задач. Посмотрите код, попробуйте демо и оцените проекты в действии.|Створюю вебзастосунки, ботів та інструменти для щоденних завдань. Перегляньте код, спробуйте демо й оцініть проєкти в дії.|Ich entwickle Webanwendungen, Bots und Werkzeuge für alltägliche Aufgaben. Entdecke den Code, teste die Demos und sieh die Projekte im Einsatz.
+SOFTWARE × AUTOMATION|РАЗРАБОТКА × АВТОМАТИЗАЦИЯ|РОЗРОБКА × АВТОМАТИЗАЦІЯ|SOFTWARE × AUTOMATISIERUNG
+Practical tools|Практичные инструменты|Практичні інструменти|Praktische Werkzeuge
+Automation, integrations and clear user interfaces.|Автоматизация, интеграции и понятные интерфейсы.|Автоматизація, інтеграції та зрозумілі інтерфейси.|Automatisierung, Integrationen und verständliche Oberflächen.
+— Web application|— Веб-приложение|— Вебзастосунок|— Webanwendung
+Copy Discord username|Скопировать ник Discord|Скопіювати нік Discord|Discord-Namen kopieren
+Username copied|Ник скопирован|Нік скопійовано|Benutzername kopiert
+Open the real bot|Открыть настоящего бота|Відкрити справжнього бота|Echten Bot öffnen
+Real screenshots|Реальные скриншоты|Справжні скриншоти|Echte Screenshots
+Interactive demo|Интерактивное демо|Інтерактивне демо|Interaktive Demo
+Open screenshot|Открыть скриншот|Відкрити скриншот|Screenshot öffnen
+Original screenshot from the project repository|Оригинальный скриншот из репозитория проекта|Оригінальний скриншот із репозиторію проєкту|Original-Screenshot aus dem Projekt-Repository
+Artist selections|Подборки артистам|Добірки артистам|Auswahl für Künstler
+Personal links with hand-picked works and automatic tag matching.|Личные ссылки с ручным выбором работ и автоматическим подбором по тегам.|Особисті посилання з ручним вибором робіт і автоматичним добором за тегами.|Persönliche Links mit ausgewählten Werken und automatischer Tag-Zuordnung.
+DIRECT TO ARTIST|НАПРЯМУЮ АРТИСТУ|БЕЗПОСЕРЕДНЬО АРТИСТУ|DIREKT AN KÜNSTLER
+New selection|Новая подборка|Нова добірка|Neue Auswahl
+Published selections are unlisted, not password-protected. Anyone with the link can open them. Tag matches update automatically as your catalogue changes.|Опубликованные подборки доступны по ссылке без пароля. Их может открыть любой, у кого есть ссылка. Состав по тегам обновляется вместе с каталогом.|Опубліковані добірки доступні за посиланням без пароля. Їх може відкрити кожен, хто має посилання. Склад за тегами оновлюється разом із каталогом.|Veröffentlichte Auswahlen sind nicht gelistet und nicht passwortgeschützt. Jeder mit dem Link kann sie öffnen. Tag-Treffer werden mit dem Katalog aktualisiert.
+Local preview with sample works. Connect Supabase to publish your selections.|Локальный предпросмотр с примерами работ. Подключите Supabase для публикации подборок.|Локальний перегляд із прикладами робіт. Підключіть Supabase для публікації добірок.|Lokale Vorschau mit Beispielwerken. Verbinde Supabase, um Auswahlen zu veröffentlichen.
+Artist|Артист|Артист|Künstler
+Personal link|Личная ссылка|Особисте посилання|Persönlicher Link
+The address is fixed after creation|Адрес нельзя менять после создания|Адресу не можна змінювати після створення|Die Adresse ist nach dem Erstellen festgelegt
+Published|Опубликовано|Опубліковано|Veröffentlicht
+Draft|Черновик|Чернетка|Entwurf
+Personal message|Личное сообщение|Особисте повідомлення|Persönliche Nachricht
+Choose works individually|Выбрать работы вручную|Вибрати роботи вручну|Werke einzeln auswählen
+Search works|Поиск работ|Пошук робіт|Werke suchen
+No matching works|Нет подходящих работ|Немає відповідних робіт|Keine passenden Werke
+Add automatically by tags|Добавлять автоматически по тегам|Додавати автоматично за тегами|Automatisch nach Tags hinzufügen
+Manual picks stay first. Matching works are added once, without duplicates.|Выбранные вручную работы идут первыми. Совпадения по тегам добавляются без повторов.|Вибрані вручну роботи йдуть першими. Збіги за тегами додаються без повторів.|Manuell gewählte Werke stehen zuerst. Tag-Treffer werden ohne Duplikate ergänzt.
+Add tags to your works first|Сначала добавьте теги работам|Спочатку додайте теги роботам|Füge deinen Werken zuerst Tags hinzu
+Tag matching|Правило подбора|Правило добору|Tag-Zuordnung
+Any selected tag|Любой выбранный тег|Будь-який вибраний тег|Beliebiger gewählter Tag
+All selected tags|Все выбранные теги|Усі вибрані теги|Alle gewählten Tags
+Manual order|Порядок ручного выбора|Порядок ручного вибору|Manuelle Reihenfolge
+Unavailable work|Работа недоступна|Робота недоступна|Werk nicht verfügbar
+Move up|Выше|Вище|Nach oben
+Move down|Ниже|Нижче|Nach unten
+works selected|работ в подборке|робіт у добірці|ausgewählte Werke
+Close preview|Закрыть предпросмотр|Закрити перегляд|Vorschau schließen
+Preview selection|Предпросмотр подборки|Попередній перегляд добірки|Auswahl vorschauen
+Save selection|Сохранить подборку|Зберегти добірку|Auswahl speichern
+Edit selection|Редактировать подборку|Редагувати добірку|Auswahl bearbeiten
+Copy link|Скопировать ссылку|Скопіювати посилання|Link kopieren
+Open selection|Открыть подборку|Відкрити добірку|Auswahl öffnen
+Delete selection|Удалить подборку|Видалити добірку|Auswahl löschen
+Create your first personal selection|Создайте первую личную подборку|Створіть першу особисту добірку|Erstelle deine erste persönliche Auswahl
+Selected for you|Подобрано для тебя|Дібрано для тебе|Für dich ausgewählt
+A personal selection of beats and ideas for your next session.|Личная подборка битов и идей для следующей сессии.|Особиста добірка бітів та ідей для наступної сесії.|Eine persönliche Auswahl an Beats und Ideen für deine nächste Session.
+PERSONAL SELECTION|ЛИЧНАЯ ПОДБОРКА|ОСОБИСТА ДОБІРКА|PERSÖNLICHE AUSWAHL
+Prepared for|Подготовлено для|Підготовлено для|Zusammengestellt für
+Play selection|Слушать подборку|Слухати добірку|Auswahl abspielen
+Get in touch|Связаться|Зв'язатися|Kontakt aufnehmen
+The selection is being updated. Please check back soon.|Подборка обновляется. Загляните чуть позже.|Добірка оновлюється. Завітайте трохи пізніше.|Die Auswahl wird aktualisiert. Schau bald wieder vorbei.
+Selection unavailable|Подборка недоступна|Добірка недоступна|Auswahl nicht verfügbar
+This link is not published or is no longer available.|Эта ссылка ещё не опубликована или уже недоступна.|Це посилання ще не опубліковане або вже недоступне.|Dieser Link ist noch nicht veröffentlicht oder nicht mehr verfügbar.
+Could not load selections|Не удалось загрузить подборки|Не вдалося завантажити добірки|Auswahlen konnten nicht geladen werden
+Retry|Повторить|Повторити|Erneut versuchen
+Use 1–64 Latin letters, numbers, hyphens or underscores for the link|Для ссылки используйте 1–64 латинских буквы, цифры, дефисы или подчёркивания|Для посилання використовуйте 1–64 латинські літери, цифри, дефіси або підкреслення|Verwende 1–64 lateinische Buchstaben, Zahlen, Bindestriche oder Unterstriche für den Link
+Enter an artist and title, and check the selection fields|Укажите артиста и название, проверьте поля подборки|Укажіть артиста й назву, перевірте поля добірки|Gib Künstler und Titel ein und prüfe die Felder
+Add at least one work before publishing|Перед публикацией добавьте хотя бы одну работу|Перед публікацією додайте хоча б одну роботу|Füge vor dem Veröffentlichen mindestens ein Werk hinzu
+This link already exists. Choose another address.|Эта ссылка уже существует. Выберите другой адрес.|Це посилання вже існує. Виберіть іншу адресу.|Dieser Link existiert bereits. Wähle eine andere Adresse.
+Could not save selection|Не удалось сохранить подборку|Не вдалося зберегти добірку|Auswahl konnte nicht gespeichert werden
+Selection saved|Подборка сохранена|Добірку збережено|Auswahl gespeichert
+The artist link will stop working. Your works will not be deleted.|Ссылка артиста перестанет работать. Сами работы останутся.|Посилання артиста перестане працювати. Самі роботи залишаться.|Der Künstlerlink funktioniert danach nicht mehr. Deine Werke bleiben erhalten.
+Could not delete selection|Не удалось удалить подборку|Не вдалося видалити добірку|Auswahl konnte nicht gelöscht werden
+Link copied|Ссылка скопирована|Посилання скопійовано|Link kopiert
+Could not copy link. Use the displayed address.|Не удалось скопировать ссылку. Используйте указанный адрес.|Не вдалося скопіювати посилання. Використайте вказану адресу.|Link konnte nicht kopiert werden. Verwende die angezeigte Adresse.

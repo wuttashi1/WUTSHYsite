@@ -1,5 +1,7 @@
 "use client";
 
+
+import { T } from "@/components/LocaleProvider";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { isSupabaseConfigured } from "@/lib/config";
@@ -15,6 +17,7 @@ import {
 } from "@/components/admin/ui";
 import { useHoverSound } from "@/hooks/useHoverSound";
 import { Plus, Trash2 } from "lucide-react";
+import { locales, translateContent, type Locale } from "@/lib/i18n";
 
 function Section({
   title,
@@ -25,7 +28,7 @@ function Section({
 }) {
   return (
     <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-      <h2 className="text-sm font-bold text-white/70">{title}</h2>
+      <h2 className="text-sm font-bold text-white/70"><T>{title}</T></h2>
       <div className="mt-4 space-y-3">{children}</div>
     </section>
   );
@@ -36,6 +39,9 @@ export default function ContentAdminPage() {
   const { hoverProps } = useHoverSound(0.05);
   const [content, setContent] = useState<SiteContent>(DEMO_CONTENT);
   const [saving, setSaving] = useState(false);
+  const [editingLocale, setEditingLocale] = useState<Locale>("en");
+  const [drafts, setDrafts] = useState<Partial<Record<Locale, SiteContent>>>({});
+  const [baseContent, setBaseContent] = useState<SiteContent>(DEMO_CONTENT);
 
   useEffect(() => {
     async function load() {
@@ -44,13 +50,11 @@ export default function ContentAdminPage() {
       const { data } = await supabase
         .from("wutshy_settings")
         .select("*")
-        .eq("key", "content")
-        .maybeSingle();
-      if (data?.value) {
-        setContent(
-          deepMergeContent(DEMO_CONTENT, data.value as Partial<SiteContent>)
-        );
-      }
+        .in("key", ["content", "content_locales"]);
+      const base = deepMergeContent(DEMO_CONTENT, data?.find(row => row.key === "content")?.value || {});
+      setBaseContent(base);
+      setContent(base);
+      setDrafts(data?.find(row => row.key === "content_locales")?.value || {});
     }
     load();
   }, []);
@@ -109,8 +113,10 @@ export default function ContentAdminPage() {
     }
     setSaving(true);
     const supabase = createClient();
-    const { error } = await supabase.from("wutshy_settings").upsert([
+    const nextDrafts = { ...drafts, [editingLocale]: content };
+    const { error } = await supabase.from("wutshy_settings").upsert(editingLocale === "en" ? [
       { key: "content", value: content },
+      { key: "content_locales", value: nextDrafts },
       {
         key: "hero",
         value: {
@@ -119,17 +125,19 @@ export default function ContentAdminPage() {
           tagline: content.hero.tagline,
         },
       },
-    ]);
+    ] : [{ key: "content_locales", value: nextDrafts }]);
+    if (!error) { setDrafts(nextDrafts); if (editingLocale === "en") setBaseContent(content); }
     setSaving(false);
     notify(error ? error.message : "Site texts saved", error ? "error" : "success");
   };
 
   return (
     <div className="p-6 md:p-8">
-      <h1 className="text-2xl font-bold">Site Texts</h1>
-      <p className="mt-1 text-sm text-white/40">
+      <h1 className="text-2xl font-bold"><T>Site Texts</T></h1>
+      <p className="mt-1 text-sm text-white/40"><T>
         Edit all copy on the homepage, about page, footer, and legal pages.
-      </p>
+      </T></p>
+      <div className="mt-6 flex flex-wrap items-center gap-3"><span className="text-xs text-white/50"><T>Content language</T></span>{locales.map(language => <button key={language} disabled={saving || editingLocale === language} onClick={() => { setDrafts(previous => ({ ...previous, [editingLocale]: content })); setContent(drafts[language] || translateContent(baseContent, language)); setEditingLocale(language); }} className={`rounded-lg border px-4 py-2 text-xs font-semibold ${editingLocale === language ? "border-[#d9f99d] bg-[#d9f99d] text-black" : "border-white/10 text-white/60"}`}>{language.toUpperCase()}</button>)}</div>
 
       <div className="mt-8 max-w-2xl space-y-6">
         <Section title="Hero (homepage)">
@@ -231,8 +239,8 @@ export default function ContentAdminPage() {
                 className="rounded-xl border border-white/10 bg-white/5 p-3"
               >
                 <div className="mb-2 flex items-center justify-between">
-                  <span className="text-xs font-medium text-white/40">
-                    Question {i + 1}
+                  <span className="text-xs font-medium text-white/40"><T>
+                    Question </T>{i + 1}
                   </span>
                   <button
                     type="button"
@@ -260,8 +268,8 @@ export default function ContentAdminPage() {
           </div>
           <Button variant="ghost" onClick={addFaqItem} {...hoverProps}>
             <span className="inline-flex items-center gap-1">
-              <Plus size={14} /> Add question
-            </span>
+              <Plus size={14} /><T> Add question
+            </T></span>
           </Button>
         </Section>
 
@@ -303,7 +311,7 @@ export default function ContentAdminPage() {
             ] as const
           ).map(([key, label]) => (
             <div key={key} className="rounded-xl bg-white/5 p-3">
-              <p className="mb-2 text-xs font-medium text-white/50">{label}</p>
+              <p className="mb-2 text-xs font-medium text-white/50"><T>{label}</T></p>
               <TextInput
                 value={content.home[key].title}
                 onChange={(e) =>
@@ -471,7 +479,7 @@ export default function ContentAdminPage() {
             ] as const
           ).map(([key, label]) => (
             <div key={key} className="rounded-xl bg-white/5 p-3">
-              <p className="mb-2 text-xs font-medium text-white/50">{label}</p>
+              <p className="mb-2 text-xs font-medium text-white/50"><T>{label}</T></p>
               <TextInput
                 value={content.pages[key].title}
                 onChange={(e) =>
@@ -502,7 +510,7 @@ export default function ContentAdminPage() {
             </div>
           ))}
           <div className="rounded-xl bg-white/5 p-3">
-            <p className="mb-2 text-xs font-medium text-white/50">Mixing page</p>
+            <p className="mb-2 text-xs font-medium text-white/50"><T>Mixing page</T></p>
             <TextInput
               value={content.pages.mixing.label}
               onChange={(e) =>
@@ -638,7 +646,7 @@ export default function ContentAdminPage() {
         </Section>
 
         <Button onClick={handleSave} disabled={saving} {...hoverProps}>
-          {saving ? "Saving..." : "Save all texts"}
+          <T>{saving ? "Saving..." : "Save all texts"}</T>
         </Button>
       </div>
     </div>
