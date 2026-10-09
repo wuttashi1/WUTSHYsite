@@ -1,3 +1,4 @@
+import { DEFAULT_CONTACT } from "@/lib/contact";
 import {
   Work,
   DrumKit,
@@ -309,10 +310,8 @@ export const DEMO_SETTINGS: SiteSettings = {
     soundcloud: { url: "", enabled: false },
     telegram: { url: "", enabled: false },
   },
-  contact: {
-    email: "den.velikiy562381@gmail.com",
-    show_email: true,
-  },
+  contact: { ...DEFAULT_CONTACT },
+  contact_it: { ...DEFAULT_CONTACT },
   payments: {
     paypal_email: "",
     enabled: false,

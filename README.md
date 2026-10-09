@@ -78,3 +78,14 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for branch and contribution guidelines.
 - Without Supabase, the admin provides a clearly labeled sample preview; saving is disabled. The sample public `/beats/send/Fimiquerro` page exists only in development, never in production.
 
 Validation: `npm run lint`, `npm run check:i18n`, `npm run check:collections`, `npm run build`.
+
+
+## Version 0.3 — contact forms
+
+Music and IT have separate contact settings under Admin → Settings. Forms start collapsed. Configure each recipient, social links, form visibility and Telegram notifications, then save all settings. SMTP has its own Verify and save button; blank password keeps the existing password.
+
+For Gmail: smtp.gmail.com, port 465, your Gmail address as username and sender, and a Gmail app password. The server verifies SMTP authentication before saving. Passwords are AES-256-GCM encrypted in the existing settings table and are never returned by the admin API. Production requires SUPABASE_SERVICE_ROLE_KEY; optionally set a stable CONTACT_ENCRYPTION_KEY before first setup. Changing the encryption key requires reconfiguring SMTP.
+
+Contact messages go to the configured email, with the visitor address as Reply-To. After successful email delivery, a copy is sent through the existing enabled Telegram bot/chat when notifications are enabled for that portfolio. A Telegram failure does not ask the visitor to resend an already delivered email. Delivery outcomes (without message content) appear in server logs. Until SMTP is configured, the form clearly reports unavailable and offers the direct email link. No email delivery is claimed before setup.
+
+Public requests validate input, origin, honeypot and consent, with a persistent per-IP minute rate limit. Rate-limit records contain salted hashes only and expire via cleanup. API recipients and bot credentials cannot be supplied by visitors.

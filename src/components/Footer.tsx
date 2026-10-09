@@ -5,6 +5,7 @@ import { T } from "@/components/LocaleProvider";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Instagram, Music2, Cloud, Send, Mail, ArrowUpRight } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 import { ConnectFooter } from "@/components/ConnectFooter";
 import { useHoverSound } from "@/hooks/useHoverSound";
 import { SiteSettings } from "@/types";
@@ -26,17 +27,17 @@ export function Footer({ settings }: FooterProps) {
   const { hoverProps } = useHoverSound(0.05);
 
   if (pathname.startsWith("/admin")) return null;
-  if (pathname === "/connect") return <ConnectFooter />;
+  if (pathname === "/connect") return <ConnectFooter profile={settings.contact_it} />;
 
   const activeSocials = (
-    Object.entries(settings.social) as [
+    Object.entries({ ...settings.social, instagram: { url: settings.contact.instagram, enabled: !!settings.contact.instagram }, telegram: { url: settings.contact.telegram, enabled: !!settings.contact.telegram } }) as [
       keyof typeof settings.social,
       { url: string; enabled: boolean },
     ][]
   ).filter(([, s]) => s.enabled && s.url);
 
   return (
-    <footer className="border-t border-black/5 bg-white">
+    <footer id="contact" className="border-t border-black/5 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6">
         <a href="/connect" className="portfolio-switch group mb-12 flex flex-col gap-6 rounded-3xl bg-[#111] p-7 text-white sm:flex-row sm:items-center sm:justify-between md:p-10">
           <div><p className="mb-3 text-xs tracking-[.18em] text-white/45"><T>THE OTHER SIDE / CODE</T></p><span className="text-xl font-semibold tracking-tight sm:text-3xl">IT PORTFOLIO</span></div>
@@ -110,6 +111,7 @@ export function Footer({ settings }: FooterProps) {
             <p className="mt-4 text-sm text-black/40">
               <T>{settings.content.footer.contact_text}</T>
             </p>
+            <ContactForm area="music" profile={settings.contact} />
           </div>
         </div>
 

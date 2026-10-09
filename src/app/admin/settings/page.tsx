@@ -1,6 +1,9 @@
 "use client";
 
 
+import { ContactSettings } from "@/components/admin/ContactSettings";
+import { SmtpSettings } from "@/components/admin/SmtpSettings";
+import { contactProfile, validEmail, safeContactUrl } from "@/lib/contact";
 import { T } from "@/components/LocaleProvider";
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
@@ -72,7 +75,8 @@ export default function SettingsAdminPage() {
             else if (val) s.social[key] = { url: val.url || "", enabled: !!val.enabled };
           }
         }
-        if (row.key === "contact") s.contact = { ...s.contact, ...v };
+        if (row.key === "contact") s.contact = contactProfile(v);
+        if (row.key === "contact_it") s.contact_it = contactProfile(v);
         if (row.key === "payments") s.payments = { ...s.payments, ...v };
         if (row.key === "featured_video")
           s.featured_video = { ...s.featured_video, ...v };
@@ -88,12 +92,18 @@ export default function SettingsAdminPage() {
       notify("Supabase not connected", "error");
       return;
     }
+    for (const profile of [settings.contact, settings.contact_it]) {
+      if (!validEmail(profile.email) || [profile.instagram, profile.telegram, profile.github].some(url => url && !safeContactUrl(url))) {
+        notify("Check contact email and HTTPS links", "error"); return;
+      }
+    }
     setSaving(true);
     const supabase = createClient();
     const { error } = await supabase.from("wutshy_settings").upsert([
       { key: "hero", value: settings.hero },
       { key: "social", value: settings.social },
       { key: "contact", value: settings.contact },
+      { key: "contact_it", value: settings.contact_it },
       { key: "payments", value: settings.payments },
       { key: "featured_video", value: settings.featured_video },
       { key: "telegram", value: settings.telegram },
@@ -105,7 +115,7 @@ export default function SettingsAdminPage() {
     );
   };
 
-  const socialKeys = ["instagram", "spotify", "soundcloud", "telegram"] as const;
+  const socialKeys = ["spotify", "soundcloud"] as const;
 
   return (
     <div className="p-6 md:p-8">
@@ -115,34 +125,9 @@ export default function SettingsAdminPage() {
       </T></p>
 
       <div className="mt-8 max-w-2xl space-y-6">
-        {/* Contact */}
-        <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-          <h2 className="text-sm font-bold text-white/70"><T>Contact</T></h2>
-          <div className="mt-4 space-y-3">
-            <Field label="Email for contact & purchases">
-              <TextInput
-                type="email"
-                value={settings.contact.email}
-                onChange={(e) =>
-                  setSettings({
-                    ...settings,
-                    contact: { ...settings.contact, email: e.target.value },
-                  })
-                }
-              />
-            </Field>
-            <Toggle
-              checked={settings.contact.show_email}
-              onChange={(v) =>
-                setSettings({
-                  ...settings,
-                  contact: { ...settings.contact, show_email: v },
-                })
-              }
-              label="Show email in footer"
-            />
-          </div>
-        </section>
+        <ContactSettings title="Music contacts" value={settings.contact} onChange={contact => setSettings({ ...settings, contact })} />
+        <ContactSettings title="IT contacts" value={settings.contact_it} onChange={contact_it => setSettings({ ...settings, contact_it })} />
+        <SmtpSettings />
 
         {/* PayPal */}
         <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">

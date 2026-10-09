@@ -20,7 +20,7 @@ export function ArtistSelection({ collection, works, demo }: { collection: Artis
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <button disabled={!playable.length} onClick={() => { if (playable[0]) playTrack(playable[0], playable); }} className="portfolio-button bg-black text-white disabled:opacity-35"><Play size={16} /><T>Play selection</T></button>
           <span className="text-xs text-black/45">{works.length} <T>works selected</T></span>
-          <a href="https://t.me/spirit_link" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm"><T>Get in touch</T><ArrowUpRight size={15} /></a>
+          <a href="#contact" className="inline-flex items-center gap-2 text-sm"><T>Get in touch</T><ArrowUpRight size={15} /></a>
         </div>
         {demo && <p className="mt-6 text-xs text-amber-800"><T>Local preview with sample works. Connect Supabase to publish your selections.</T></p>}
       </div>

@@ -1,3 +1,4 @@
+import { contactProfile } from "@/lib/contact";
 import { SiteSettings } from "@/types";
 import { DEMO_SETTINGS } from "@/lib/data";
 import { deepMergeContent } from "@/lib/content";
@@ -29,7 +30,10 @@ function mergeSettings(rows: { key: string; value: unknown }[]): SiteSettings {
         break;
       }
       case "contact":
-        s.contact = { ...s.contact, ...(v as SiteSettings["contact"]) };
+        s.contact = contactProfile(v);
+        break;
+      case "contact_it":
+        s.contact_it = contactProfile(v);
         break;
       case "payments":
         s.payments = { ...s.payments, ...(v as SiteSettings["payments"]) };
@@ -70,7 +74,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
   if (!isSupabaseConfigured()) return DEMO_SETTINGS;
 
   const supabase = await createClient();
-  const { data } = await supabase.from("wutshy_settings").select("*").in("key", ["hero", "social", "contact", "payments", "featured_video", "content", "content_locales"]);
+  const { data } = await supabase.from("wutshy_settings").select("*").in("key", ["hero", "social", "contact", "contact_it", "payments", "featured_video", "content", "content_locales"]);
   if (!data?.length) return DEMO_SETTINGS;
   return mergeSettings(data);
 }

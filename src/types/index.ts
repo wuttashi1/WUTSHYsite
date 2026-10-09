@@ -1,3 +1,4 @@
+import type { ContactProfile } from "@/lib/contact";
 export type WorkType = "beat" | "mixing" | "placement";
 export type SpotifyType = "track" | "playlist" | "album";
 
@@ -124,10 +125,8 @@ export interface SiteSettings {
     soundcloud: SocialLink;
     telegram: SocialLink;
   };
-  contact: {
-    email: string;
-    show_email: boolean;
-  };
+  contact: ContactProfile;
+  contact_it: ContactProfile;
   payments: {
     paypal_email: string;
     enabled: boolean;

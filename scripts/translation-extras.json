@@ -1,19 +1,314 @@
 {
-  "Музыка и технологии — две стороны моего творчества. Здесь собираю проекты, в которых идеи становятся интерфейсами.": ["Музыка и технологии — две стороны моего творчества. Здесь собираю проекты, в которых идеи становятся интерфейсами.", "Музика та технології — дві сторони моєї творчості. Тут збираю проєкти, у яких ідеї стають інтерфейсами.", "Music and technology are two sides of my creativity. Here are the projects where my ideas become interfaces.", "Musik und Technologie sind zwei Seiten meiner Kreativität. Hier werden meine Ideen zu Interfaces."],
-  "Смотреть проекты": ["Смотреть проекты", "Переглянути проєкти", "View projects", "Projekte ansehen"],
-  "Из идеи в проект.": ["Из идеи в проект.", "Від ідеї до проєкту.", "From idea to project.", "Von der Idee zum Projekt."],
-  "Исходный код": ["Исходный код", "Вихідний код", "Source code", "Quellcode"],
-  "Музыкальное портфолио, в котором всё на своём месте: биты, драм-киты, аудиопревью и управление контентом.": ["Музыкальное портфолио, в котором всё на своём месте: биты, драм-киты, аудиопревью и управление контентом.", "Музичне портфоліо, де все на своєму місці: біти, драм-кіти, аудіопрев'ю та керування контентом.", "A music portfolio with everything in place: beats, drum kits, audio previews and content management.", "Ein Musikportfolio mit Beats, Drum-Kits, Audiovorschauen und Inhaltsverwaltung."],
-  "Разработка": ["Разработка", "Розробка", "Development", "Entwicklung"],
-  "От структуры приложения до работающего интерфейса.": ["От структуры приложения до работающего интерфейса.", "Від структури застосунку до робочого інтерфейсу.", "From application structure to a working interface.", "Von der App-Struktur bis zum fertigen Interface."],
-  "Внимание к деталям": ["Внимание к деталям", "Увага до деталей", "Attention to detail", "Liebe zum Detail"],
-  "Типографика, движение и понятное взаимодействие.": ["Типографика, движение и понятное взаимодействие.", "Типографіка, рух і зрозуміла взаємодія.", "Typography, motion and intuitive interaction.", "Typografie, Bewegung und intuitive Bedienung."],
-  "Творческий подход": ["Творческий подход", "Творчий підхід", "Creative thinking", "Kreatives Denken"],
-  "Опыт в музыке, который находит продолжение в коде.": ["Опыт в музыке, который находит продолжение в коде.", "Досвід у музиці, який знаходить продовження в коді.", "A background in music, carried into code.", "Musikalische Erfahrung, die im Code weiterlebt."],
-  "Тексты главной страницы, разделов и контактов.": ["Тексты главной страницы, разделов и контактов.", "Тексти головної сторінки, розділів і контактів.", "Homepage, section and contact copy.", "Texte für Startseite, Abschnitte und Kontakt."],
-  "Социальные сети, оплата и настройки портфолио.": ["Социальные сети, оплата и настройки портфолио.", "Соціальні мережі, оплата та налаштування портфоліо.", "Social links, payments and portfolio settings.", "Social Media, Zahlungen und Portfolio-Einstellungen."],
-  "Посмотреть IT-портфолио и страницу проектов.": ["Посмотреть IT-портфолио и страницу проектов.", "Переглянути IT-портфоліо та сторінку проєктів.", "Explore the IT portfolio and project previews.", "IT-Portfolio und Projektvorschauen ansehen."],
-  "Preview mode — показаны демоданные. Для сохранения изменений подключите Supabase.": ["Режим просмотра — показаны демоданные. Для сохранения изменений подключите Supabase.", "Режим перегляду — показано демодані. Для збереження змін підключіть Supabase.", "Preview mode — sample data shown. Connect Supabase to save changes.", "Vorschaumodus — Beispieldaten. Verbinde Supabase, um Änderungen zu speichern."],
-  "Не удалось загрузить статистику. Проверьте подключение и обновите страницу.": ["Не удалось загрузить статистику. Проверьте подключение и обновите страницу.", "Не вдалося завантажити статистику. Перевірте з'єднання й оновіть сторінку.", "Could not load statistics. Check your connection and refresh.", "Statistik konnte nicht geladen werden. Verbindung prüfen und Seite neu laden."],
-  "Не удалось подключиться к базе данных. Обновите страницу.": ["Не удалось подключиться к базе данных. Обновите страницу.", "Не вдалося підключитися до бази даних. Оновіть сторінку.", "Could not connect to the database. Refresh the page.", "Keine Datenbankverbindung. Bitte lade die Seite neu."]
+  "Музыка и технологии — две стороны моего творчества. Здесь собираю проекты, в которых идеи становятся интерфейсами.": [
+    "Музыка и технологии — две стороны моего творчества. Здесь собираю проекты, в которых идеи становятся интерфейсами.",
+    "Музика та технології — дві сторони моєї творчості. Тут збираю проєкти, у яких ідеї стають інтерфейсами.",
+    "Music and technology are two sides of my creativity. Here are the projects where my ideas become interfaces.",
+    "Musik und Technologie sind zwei Seiten meiner Kreativität. Hier werden meine Ideen zu Interfaces."
+  ],
+  "Смотреть проекты": [
+    "Смотреть проекты",
+    "Переглянути проєкти",
+    "View projects",
+    "Projekte ansehen"
+  ],
+  "Из идеи в проект.": [
+    "Из идеи в проект.",
+    "Від ідеї до проєкту.",
+    "From idea to project.",
+    "Von der Idee zum Projekt."
+  ],
+  "Исходный код": [
+    "Исходный код",
+    "Вихідний код",
+    "Source code",
+    "Quellcode"
+  ],
+  "Музыкальное портфолио, в котором всё на своём месте: биты, драм-киты, аудиопревью и управление контентом.": [
+    "Музыкальное портфолио, в котором всё на своём месте: биты, драм-киты, аудиопревью и управление контентом.",
+    "Музичне портфоліо, де все на своєму місці: біти, драм-кіти, аудіопрев'ю та керування контентом.",
+    "A music portfolio with everything in place: beats, drum kits, audio previews and content management.",
+    "Ein Musikportfolio mit Beats, Drum-Kits, Audiovorschauen und Inhaltsverwaltung."
+  ],
+  "Разработка": [
+    "Разработка",
+    "Розробка",
+    "Development",
+    "Entwicklung"
+  ],
+  "От структуры приложения до работающего интерфейса.": [
+    "От структуры приложения до работающего интерфейса.",
+    "Від структури застосунку до робочого інтерфейсу.",
+    "From application structure to a working interface.",
+    "Von der App-Struktur bis zum fertigen Interface."
+  ],
+  "Внимание к деталям": [
+    "Внимание к деталям",
+    "Увага до деталей",
+    "Attention to detail",
+    "Liebe zum Detail"
+  ],
+  "Типографика, движение и понятное взаимодействие.": [
+    "Типографика, движение и понятное взаимодействие.",
+    "Типографіка, рух і зрозуміла взаємодія.",
+    "Typography, motion and intuitive interaction.",
+    "Typografie, Bewegung und intuitive Bedienung."
+  ],
+  "Творческий подход": [
+    "Творческий подход",
+    "Творчий підхід",
+    "Creative thinking",
+    "Kreatives Denken"
+  ],
+  "Опыт в музыке, который находит продолжение в коде.": [
+    "Опыт в музыке, который находит продолжение в коде.",
+    "Досвід у музиці, який знаходить продовження в коді.",
+    "A background in music, carried into code.",
+    "Musikalische Erfahrung, die im Code weiterlebt."
+  ],
+  "Тексты главной страницы, разделов и контактов.": [
+    "Тексты главной страницы, разделов и контактов.",
+    "Тексти головної сторінки, розділів і контактів.",
+    "Homepage, section and contact copy.",
+    "Texte für Startseite, Abschnitte und Kontakt."
+  ],
+  "Социальные сети, оплата и настройки портфолио.": [
+    "Социальные сети, оплата и настройки портфолио.",
+    "Соціальні мережі, оплата та налаштування портфоліо.",
+    "Social links, payments and portfolio settings.",
+    "Social Media, Zahlungen und Portfolio-Einstellungen."
+  ],
+  "Посмотреть IT-портфолио и страницу проектов.": [
+    "Посмотреть IT-портфолио и страницу проектов.",
+    "Переглянути IT-портфоліо та сторінку проєктів.",
+    "Explore the IT portfolio and project previews.",
+    "IT-Portfolio und Projektvorschauen ansehen."
+  ],
+  "Preview mode — показаны демоданные. Для сохранения изменений подключите Supabase.": [
+    "Режим просмотра — показаны демоданные. Для сохранения изменений подключите Supabase.",
+    "Режим перегляду — показано демодані. Для збереження змін підключіть Supabase.",
+    "Preview mode — sample data shown. Connect Supabase to save changes.",
+    "Vorschaumodus — Beispieldaten. Verbinde Supabase, um Änderungen zu speichern."
+  ],
+  "Не удалось загрузить статистику. Проверьте подключение и обновите страницу.": [
+    "Не удалось загрузить статистику. Проверьте подключение и обновите страницу.",
+    "Не вдалося завантажити статистику. Перевірте з'єднання й оновіть сторінку.",
+    "Could not load statistics. Check your connection and refresh.",
+    "Statistik konnte nicht geladen werden. Verbindung prüfen und Seite neu laden."
+  ],
+  "Не удалось подключиться к базе данных. Обновите страницу.": [
+    "Не удалось подключиться к базе данных. Обновите страницу.",
+    "Не вдалося підключитися до бази даних. Оновіть сторінку.",
+    "Could not connect to the database. Refresh the page.",
+    "Keine Datenbankverbindung. Bitte lade die Seite neu."
+  ],
+  "Write to me": [
+    "Написать мне",
+    "Написати мені",
+    "Write to me",
+    "Nachricht schreiben"
+  ],
+  "Your message goes to my email. I reply to the address you provide.": [
+    "Сообщение придёт на мою почту. Отвечу на указанный вами адрес.",
+    "Повідомлення надійде на мою пошту. Відповім на вказану вами адресу.",
+    "Your message goes to my email. I reply to the address you provide.",
+    "Die Nachricht geht an meine E-Mail. Ich antworte an Ihre angegebene Adresse."
+  ],
+  "Your name": [
+    "Ваше имя",
+    "Ваше ім’я",
+    "Your name",
+    "Ihr Name"
+  ],
+  "Your email": [
+    "Ваша почта",
+    "Ваша пошта",
+    "Your email",
+    "Ihre E-Mail"
+  ],
+  "Message": [
+    "Сообщение",
+    "Повідомлення",
+    "Message",
+    "Nachricht"
+  ],
+  "I agree to use my contact details to reply to this inquiry.": [
+    "Согласен на использование моих контактов для ответа на обращение.",
+    "Погоджуюсь на використання моїх контактів для відповіді на звернення.",
+    "I agree to use my contact details to reply to this inquiry.",
+    "Ich stimme der Nutzung meiner Kontaktdaten zur Beantwortung dieser Anfrage zu."
+  ],
+  "Sending...": [
+    "Отправка...",
+    "Надсилання...",
+    "Sending...",
+    "Wird gesendet..."
+  ],
+  "Send message": [
+    "Отправить сообщение",
+    "Надіслати повідомлення",
+    "Send message",
+    "Nachricht senden"
+  ],
+  "Message sent. Thank you — I will reply by email.": [
+    "Сообщение отправлено. Спасибо! Отвечу по почте.",
+    "Повідомлення надіслано. Дякую! Відповім поштою.",
+    "Message sent. Thank you — I will reply by email.",
+    "Nachricht gesendet. Vielen Dank! Ich antworte per E-Mail."
+  ],
+  "Could not send. Please use email directly.": [
+    "Не удалось отправить. Напишите напрямую на почту.",
+    "Не вдалося надіслати. Напишіть безпосередньо на пошту.",
+    "Could not send. Please use email directly.",
+    "Senden fehlgeschlagen. Bitte schreiben Sie direkt per E-Mail."
+  ],
+  "The form is unavailable. Please use email directly.": [
+    "Форма пока недоступна. Напишите напрямую на почту.",
+    "Форма поки недоступна. Напишіть безпосередньо на пошту.",
+    "The form is unavailable. Please use email directly.",
+    "Das Formular ist derzeit nicht verfügbar. Bitte schreiben Sie direkt per E-Mail."
+  ],
+  "Check your name, email and message": [
+    "Проверьте имя, почту и сообщение",
+    "Перевірте ім’я, пошту та повідомлення",
+    "Check your name, email and message",
+    "Bitte prüfen Sie Name, E-Mail und Nachricht"
+  ],
+  "Please wait a minute before sending again": [
+    "Подождите минуту перед повторной отправкой",
+    "Зачекайте хвилину перед повторним надсиланням",
+    "Please wait a minute before sending again",
+    "Bitte warten Sie eine Minute vor dem erneuten Senden"
+  ],
+  "Music contacts": [
+    "Контакты для музыки",
+    "Контакти для музики",
+    "Music contacts",
+    "Musikkontakte"
+  ],
+  "IT contacts": [
+    "Контакты для IT",
+    "Контакти для IT",
+    "IT contacts",
+    "IT-Kontakte"
+  ],
+  "Enable collapsible contact form": [
+    "Включить раскрывающуюся форму связи",
+    "Увімкнути розгортану форму зв’язку",
+    "Enable collapsible contact form",
+    "Aufklappbares Kontaktformular aktivieren"
+  ],
+  "Notify the connected Telegram bot": [
+    "Уведомлять через подключённого Telegram-бота",
+    "Сповіщати через підключеного Telegram-бота",
+    "Notify the connected Telegram bot",
+    "Über den verbundenen Telegram-Bot benachrichtigen"
+  ],
+  "Discord username": [
+    "Ник Discord",
+    "Нік Discord",
+    "Discord username",
+    "Discord-Benutzername"
+  ],
+  "Leave a social link empty to hide it. Telegram alerts use the bot and chat ID configured below.": [
+    "Оставьте ссылку пустой, чтобы скрыть её. Уведомления используют бота и ID чата, указанные ниже.",
+    "Залиште посилання порожнім, щоб приховати його. Сповіщення використовують бота та ID чату, вказані нижче.",
+    "Leave a social link empty to hide it. Telegram alerts use the bot and chat ID configured below.",
+    "Leere Links werden ausgeblendet. Benachrichtigungen verwenden den unten konfigurierten Bot und die Chat-ID."
+  ],
+  "Check contact email and HTTPS links": [
+    "Проверьте почту и ссылки HTTPS",
+    "Перевірте пошту та посилання HTTPS",
+    "Check contact email and HTTPS links",
+    "Bitte prüfen Sie die E-Mail-Adresse und HTTPS-Links"
+  ],
+  "Email delivery / SMTP": [
+    "Отправка почты / SMTP",
+    "Надсилання пошти / SMTP",
+    "Email delivery / SMTP",
+    "E-Mail-Versand / SMTP"
+  ],
+  "For Gmail use an app password. The password is encrypted and is never returned to the browser. Leave it blank to keep the saved password.": [
+    "Для Gmail используйте пароль приложения. Он хранится зашифрованным и не возвращается в браузер. Оставьте поле пустым, чтобы сохранить текущий пароль.",
+    "Для Gmail використовуйте пароль застосунку. Він зберігається зашифрованим і не повертається в браузер. Залиште поле порожнім, щоб зберегти поточний пароль.",
+    "For Gmail use an app password. The password is encrypted and is never returned to the browser. Leave it blank to keep the saved password.",
+    "Für Gmail verwenden Sie ein App-Passwort. Es wird verschlüsselt und niemals an den Browser zurückgegeben. Leer lassen, um das gespeicherte Passwort beizubehalten."
+  ],
+  "SMTP is configured": [
+    "SMTP настроен",
+    "SMTP налаштовано",
+    "SMTP is configured",
+    "SMTP ist eingerichtet"
+  ],
+  "SMTP is not configured yet": [
+    "SMTP ещё не настроен",
+    "SMTP ще не налаштовано",
+    "SMTP is not configured yet",
+    "SMTP ist noch nicht eingerichtet"
+  ],
+  "SMTP settings unavailable. Check server configuration.": [
+    "Настройки SMTP недоступны. Проверьте SUPABASE_SERVICE_ROLE_KEY на сервере.",
+    "Налаштування SMTP недоступні. Перевірте SUPABASE_SERVICE_ROLE_KEY на сервері.",
+    "SMTP settings unavailable. Check server configuration.",
+    "SMTP-Einstellungen nicht verfügbar. Prüfen Sie SUPABASE_SERVICE_ROLE_KEY auf dem Server."
+  ],
+  "SMTP server": [
+    "Сервер SMTP",
+    "Сервер SMTP",
+    "SMTP server",
+    "SMTP-Server"
+  ],
+  "Port": [
+    "Порт",
+    "Порт",
+    "Port",
+    "Port"
+  ],
+  "SMTP username": [
+    "Логин SMTP",
+    "Логін SMTP",
+    "SMTP username",
+    "SMTP-Benutzername"
+  ],
+  "Sender email": [
+    "Почта отправителя",
+    "Пошта відправника",
+    "Sender email",
+    "Absenderadresse"
+  ],
+  "App password": [
+    "Пароль приложения",
+    "Пароль застосунку",
+    "App password",
+    "App-Passwort"
+  ],
+  "Verifying...": [
+    "Проверка...",
+    "Перевірка...",
+    "Verifying...",
+    "Wird geprüft..."
+  ],
+  "Verify and save SMTP": [
+    "Проверить и сохранить SMTP",
+    "Перевірити та зберегти SMTP",
+    "Verify and save SMTP",
+    "SMTP prüfen und speichern"
+  ],
+  "SMTP verified and saved": [
+    "SMTP проверен и сохранён",
+    "SMTP перевірено та збережено",
+    "SMTP verified and saved",
+    "SMTP geprüft und gespeichert"
+  ],
+  "Could not verify or save SMTP. Check credentials and server configuration.": [
+    "Не удалось проверить или сохранить SMTP. Проверьте логин, пароль и настройки сервера.",
+    "Не вдалося перевірити або зберегти SMTP. Перевірте логін, пароль та налаштування сервера.",
+    "Could not verify or save SMTP. Check credentials and server configuration.",
+    "SMTP konnte nicht geprüft oder gespeichert werden. Prüfen Sie Zugangsdaten und Serverkonfiguration."
+  ],
+  "SMTP is saved separately. Contact recipients and Telegram notifications use the contact settings above.": [
+    "SMTP сохраняется отдельно. Получатели писем и уведомления Telegram задаются в контактах выше.",
+    "SMTP зберігається окремо. Отримувачі листів та сповіщення Telegram задаються в контактах вище.",
+    "SMTP is saved separately. Contact recipients and Telegram notifications use the contact settings above.",
+    "SMTP wird separat gespeichert. Empfänger und Telegram-Benachrichtigungen werden oben in den Kontakten eingestellt."
+  ]
 }
