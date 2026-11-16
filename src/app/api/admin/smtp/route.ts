@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
+import { isSiteAdmin } from "@/lib/visualizer/server";
 import { encryptSmtp, getSmtp, privateDb, validSmtp, mailTransport, type SmtpSettings } from "@/lib/contact-server";
 export const runtime = "nodejs";
 export const maxDuration = 60;
-async function authorized() { try { return !!(await (await createClient()).auth.getUser()).data.user; } catch { return false; } }
+const authorized = isSiteAdmin;
 export async function GET() {
   if (!await authorized()) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   try { const smtp = await getSmtp(); return NextResponse.json(smtp ? { host: smtp.host, port: smtp.port, user: smtp.user, from: smtp.from, configured: true } : { configured: false }, { headers: { "Cache-Control": "no-store" } }); }

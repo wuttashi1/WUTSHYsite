@@ -27,10 +27,10 @@ export function PlayerBar() {
   const pathname = usePathname();
   const barRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (pathname === "/connect" && isPlaying) toggle();
+    if ((pathname === "/connect" || (pathname.startsWith("/visualizer") || pathname.startsWith("/oscilloscope"))) && isPlaying) toggle();
   }, [pathname, isPlaying, toggle]);
 
-  if (pathname.startsWith("/admin") || pathname === "/connect") return null;
+  if (pathname.startsWith("/admin") || (pathname === "/connect" || (pathname.startsWith("/visualizer") || pathname.startsWith("/oscilloscope")))) return null;
 
   const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();

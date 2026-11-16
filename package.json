@@ -12,29 +12,39 @@
     "lint": "eslint src",
     "check:i18n": "node scripts/check-localization.cjs",
     "i18n:build": "node scripts/build-translations.mjs",
-    "check:collections": "node scripts/check-collections.cjs"
+    "check:collections": "node scripts/check-collections.cjs",
+    "test:oscilloscope": "tsx --test tests/oscilloscope.test.ts",
+    "test:visualizer": "tsx --test tests/visualizer.test.ts tests/visualizer-security.test.ts",
+    "test:visualizer:export": "node scripts/verify-visualizer-export.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.8",
+    "@tonejs/midi": "^2.0.28",
     "framer-motion": "^12.12.1",
+    "idb": "^8.0.4",
     "lucide-react": "^0.511.0",
+    "mediabunny": "^1.61.3",
     "next": "^15.3.3",
     "nodemailer": "^10.0.13",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
     "@eslint/eslintrc": "^3.3.1",
+    "@napi-rs/canvas": "^1.0.10",
     "@tailwindcss/postcss": "^4.1.8",
     "@types/node": "^22.15.29",
     "@types/nodemailer": "^8.0.2",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "concurrently": "^9.2.3",
+    "esbuild": "^0.28.2",
     "eslint": "^9.28.0",
     "eslint-config-next": "^15.3.3",
     "tailwindcss": "^4.1.8",
+    "tsx": "^4.23.15",
     "typescript": "^5.8.3"
   },
   "overrides": {

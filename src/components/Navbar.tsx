@@ -12,6 +12,7 @@ import { Logo } from "@/components/Logo";
 import { LanguageSwitcher } from "@/components/LocaleProvider";
 
 const links = [
+  { href: "/visualizer", label: "VISUALIZER", badge: "NEW" },
   { href: "/beats", label: "Beats" },
   { href: "/mixing", label: "Mixing", badge: null },
   { href: "/drum-kits", label: "Drum Kits", badge: "NEW" },
@@ -25,7 +26,7 @@ export function Navbar() {
   const [query, setQuery] = useState("");
   const { hoverProps } = useHoverSound();
 
-  if (pathname.startsWith("/admin")) return null;
+  if (pathname.startsWith("/admin") || pathname === "/visualizer/editor") return null;
   if (pathname === "/connect") return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#111]/95 text-white backdrop-blur-xl">
       <nav aria-label="Portfolio" className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">

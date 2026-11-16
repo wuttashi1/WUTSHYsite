@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {Midi} from '@tonejs/midi';import {midiSignal} from '../src/lib/oscilloscope/midi';
+const bytes=(m:Midi)=>Uint8Array.from(m.toArray()).buffer;
+test('MIDI synth preserves note timing and generates distinct bounded XY channels',async()=>{const m=new Midi();m.addTrack().addNote({midi:60,time:.1,duration:.2,velocity:.8});const {signal,notes}=await midiSignal(bytes(m));assert.equal(notes,1);assert(Math.abs(signal.duration-.42)<.005);assert(signal.channels[0].slice(0,4000).every(v=>v===0));assert(signal.channels[0].some(v=>Math.abs(v)>.01));assert.notDeepEqual(signal.channels[0],signal.channels[1]);for(const ch of signal.channels)assert(ch.every(v=>Number.isFinite(v)&&Math.abs(v)<=.851));});
+test('Empty and malformed MIDI fail clearly',async()=>{await assert.rejects(midiSignal(bytes(new Midi())),/no playable notes/);await assert.rejects(midiSignal(new ArrayBuffer(4)),/standard Type/);});

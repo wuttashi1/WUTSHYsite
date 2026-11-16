@@ -26,7 +26,7 @@ export function Footer({ settings }: FooterProps) {
   const pathname = usePathname();
   const { hoverProps } = useHoverSound(0.05);
 
-  if (pathname.startsWith("/admin")) return null;
+  if (pathname.startsWith("/admin") || pathname.startsWith("/visualizer")) return null;
   if (pathname === "/connect") return <ConnectFooter profile={settings.contact_it} />;
 
   const activeSocials = (

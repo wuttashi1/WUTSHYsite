@@ -41,7 +41,12 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  if (isLogin && user) {
+  const {data: admin} = user ? await supabase.rpc("is_site_admin") : {data:false};
+  if (isAdminArea && !isLogin && user && !admin) {
+    return NextResponse.redirect(new URL("/visualizer", request.url));
+  }
+
+  if (isLogin && user && admin) {
     const url = request.nextUrl.clone();
     url.pathname = "/admin";
     return NextResponse.redirect(url);
