@@ -20,6 +20,7 @@ interface PlayerState {
   currentTime: number;
   volume: number;
   playTrack: (track: PlayerTrack, queue?: PlayerTrack[]) => void;
+  switchVersion: (track: PlayerTrack) => void;
   toggle: () => void;
   toggleTrack: (track: PlayerTrack, queue?: PlayerTrack[]) => void;
   next: () => void;
@@ -74,13 +75,27 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     (track: PlayerTrack, newQueue?: PlayerTrack[]) => {
       const audio = audioRef.current;
       if (!audio || !track.audioUrl) return;
-      if (newQueue) setQueue(newQueue);
+      setQueue(newQueue ?? []);
+      setCurrentTime(0);
+      setDuration(0);
+      setProgress(0);
       setCurrent(track);
       audio.src = track.audioUrl;
       audio.play().catch(() => {});
     },
     []
   );
+
+  const switchVersion = useCallback((track: PlayerTrack) => {
+    const audio = audioRef.current;
+    if (!audio || current?.id !== track.id || !track.audioUrl) return;
+    const position = audio.currentTime;
+    const resume = !audio.paused;
+    audio.src = track.audioUrl;
+    audio.currentTime = position;
+    setCurrent(track);
+    if (resume) audio.play().catch(() => {});
+  }, [current]);
 
   const toggle = useCallback(() => {
     const audio = audioRef.current;
@@ -140,6 +155,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
         volume,
         playTrack,
         toggle,
+        switchVersion,
         toggleTrack,
         next,
         prev,

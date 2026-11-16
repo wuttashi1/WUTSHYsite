@@ -1,5 +1,7 @@
 
 import { T } from "@/components/LocaleProvider";
+import { Suspense } from "react";
+import { TelegramUpdates } from "@/components/TelegramUpdates";
 import Link from "next/link";
 import { getFeaturedWorks, getWorks, getDrumKits, getSiteSettings } from "@/lib/queries";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -127,6 +129,8 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+
+      <Suspense fallback={null}><TelegramUpdates /></Suspense>
 
       {featuredKits.length > 0 && (
         <section className="bg-[#fafafa] py-16 md:py-24">

@@ -2,82 +2,47 @@
 
 
 import { T } from "@/components/LocaleProvider";
-import { Work } from "@/types";
-import { useRef, useState, useEffect } from "react";
+import { Work, PlayerTrack } from "@/types";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause } from "lucide-react";
-import { formatDuration } from "@/lib/data";
+import { usePlayer } from "@/context/PlayerContext";
+import { workToTrack, formatDuration } from "@/lib/data";
 import { useHoverSound } from "@/hooks/useHoverSound";
 import Image from "next/image";
 
 type Mode = "before" | "after";
 
-export function MixBeforeAfter({ work, index = 0 }: { work: Work; index?: number }) {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [mode, setMode] = useState<Mode>("after");
-  const [playing, setPlaying] = useState(false);
-  const [time, setTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+export function MixBeforeAfter({ work, queue, index = 0 }: { work: Work; queue: PlayerTrack[]; index?: number }) {
+  const player = usePlayer();
+  const [selection, setSelection] = useState<Mode>(work.audio_url ? "after" : "before");
   const { hoverProps, playClick } = useHoverSound();
-
-  const beforeUrl = work.audio_before_url;
-  const afterUrl = work.audio_url;
-  const currentUrl = mode === "before" ? beforeUrl : afterUrl;
-  const hasBoth = !!beforeUrl && !!afterUrl;
-
-  useEffect(() => {
-    audioRef.current = new Audio();
-    const audio = audioRef.current;
-    const onTime = () => {
-      setTime(audio.currentTime);
-      setDuration(audio.duration || 0);
-    };
-    const onEnd = () => setPlaying(false);
-    audio.addEventListener("timeupdate", onTime);
-    audio.addEventListener("loadedmetadata", onTime);
-    audio.addEventListener("ended", onEnd);
-    return () => {
-      audio.pause();
-      audio.removeEventListener("timeupdate", onTime);
-      audio.removeEventListener("loadedmetadata", onTime);
-      audio.removeEventListener("ended", onEnd);
-    };
-  }, []);
+  const active = player.current?.id === work.id;
+  const mode = active ? (player.current?.audioUrl === work.audio_before_url ? "before" : "after") : selection;
+  const currentUrl = mode === "before" ? work.audio_before_url : work.audio_url;
+  const hasBoth = !!work.audio_before_url && !!work.audio_url;
+  const playing = active && player.isPlaying;
+  const time = active ? player.currentTime : 0;
+  const duration = active ? player.duration : 0;
 
   const toggle = () => {
-    const audio = audioRef.current;
-    if (!audio || !currentUrl) return;
+    if (!currentUrl) return;
     playClick();
-    if (!audio.src.includes(encodeURI(currentUrl)) && audio.src !== currentUrl) {
-      audio.src = currentUrl;
-    }
-    if (audio.paused) {
-      audio.play().catch(() => {});
-      setPlaying(true);
-    } else {
-      audio.pause();
-      setPlaying(false);
-    }
+    player.toggleTrack({ ...workToTrack(work), audioUrl: currentUrl }, queue);
   };
 
   const switchMode = (newMode: Mode) => {
-    const audio = audioRef.current;
+    if (mode === newMode) return;
     playClick();
-    setMode(newMode);
-    const url = newMode === "before" ? beforeUrl : afterUrl;
-    if (!audio || !url) return;
-    const wasPlaying = !audio.paused;
-    const pos = audio.currentTime;
-    audio.src = url;
-    audio.currentTime = pos || 0;
-    if (wasPlaying) audio.play().catch(() => {});
+    setSelection(newMode);
+    const url = newMode === "before" ? work.audio_before_url : work.audio_url;
+    if (active && url) player.switchVersion({ ...workToTrack(work), audioUrl: url });
   };
 
   const seek = (e: React.MouseEvent<HTMLDivElement>) => {
-    const audio = audioRef.current;
-    if (!audio || !audio.duration) return;
+    if (!active) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+    player.seek(Math.max(0, Math.min(100, (e.clientX - rect.left) / rect.width * 100)));
   };
 
   const rawFilter =

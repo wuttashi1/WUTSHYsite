@@ -1,6 +1,7 @@
 
 import { T } from "@/components/LocaleProvider";
 import { getWorks, getSiteSettings } from "@/lib/queries";
+import { workToTrack } from "@/lib/data";
 import { SectionHeader } from "@/components/SectionHeader";
 import { MixBeforeAfter } from "@/components/MixBeforeAfter";
 
@@ -14,6 +15,8 @@ export default async function MixingPage() {
     getSiteSettings(),
   ]);
 
+  const queue = works.map(work => ({ ...workToTrack(work), audioUrl: work.audio_url || work.audio_before_url || "" })).filter(track => track.audioUrl);
+
   return (
     <section className="py-16 pb-28 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
@@ -25,7 +28,7 @@ export default async function MixingPage() {
         {works.length > 0 ? (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {works.map((work, i) => (
-              <MixBeforeAfter key={work.id} work={work} index={i} />
+              <MixBeforeAfter key={work.id} work={work} queue={queue} index={i} />
             ))}
           </div>
         ) : (

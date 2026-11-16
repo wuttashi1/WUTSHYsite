@@ -316,13 +316,19 @@ async function poll() {
   }
 
   try {
-    const res = await tg("getUpdates", { offset, timeout: 30 });
+    const res = await tg("getUpdates", { offset, timeout: 30, allowed_updates: ["message", "channel_post", "edited_channel_post"] });
     if (!res.ok) {
       console.error("[bot] getUpdates error:", res.description);
       return;
     }
 
     for (const update of res.result || []) {
+      const post = update.channel_post || update.edited_channel_post;
+      if (post?.chat?.username?.toLowerCase() === "wutshy" && Number.isSafeInteger(post.message_id)) {
+        const key = "wutshy-channel-" + String(post.message_id).padStart(12, "0");
+        const { error } = await supabase.from("wutshy_settings").upsert({ key, value: post.message_id });
+        if (error) throw error;
+      }
       offset = update.update_id + 1;
       if (update.message) {
         try {
