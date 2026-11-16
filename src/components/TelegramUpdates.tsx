@@ -1,9 +1,37 @@
+import { unstable_cache } from "next/cache";
+import { privateDb } from "@/lib/contact-server";
 import { TelegramPost } from "./TelegramPost";
 import { isSupabaseConfigured } from "@/lib/config";
 import { createClient } from "@/lib/supabase/server";
 
 const channel = "https://t.me/wutshy";
 const initialPosts = [326, 325, 322];
+
+// Some channels expose individual embeds but redirect their public timeline.
+const discoverPosts = unstable_cache(async (after: number) => {
+  const candidates = Array.from({ length: 8 }, (_, index) => after + index + 1);
+  const checks = await Promise.all(candidates.map(async id => {
+    try {
+      const response = await fetch(`${channel}/${id}?embed=1`, {
+        cache: "no-store", signal: AbortSignal.timeout(3500),
+      });
+      return response.ok && (await response.text()).includes(`data-post="wutshy/${id}"`) ? id : null;
+    } catch {
+      return null;
+    }
+  }));
+  const ids = checks.filter((id): id is number => id !== null);
+  if (ids.length) {
+    try {
+      const rows = ids.map(id => ({ key: "wutshy-channel-" + String(id).padStart(12, "0"), value: id }));
+      const { error } = await privateDb().from("wutshy_settings").upsert(rows);
+      if (error) console.warn("Telegram post cache could not be updated");
+    } catch {
+      console.warn("Telegram post cache unavailable");
+    }
+  }
+  return ids;
+}, ["wutshy-public-embeds"], { revalidate: 180 });
 
 async function latestPosts() {
   const preview = fetch("https://t.me/s/wutshy", {
@@ -21,7 +49,9 @@ async function latestPosts() {
     return (data ?? []).map(row => row.value).filter(Number.isSafeInteger) as number[];
   };
   const [publicIds, botIds] = await Promise.all([preview, recorded().catch(() => [])]);
-  return [...new Set([...publicIds, ...botIds, ...initialPosts])].sort((a, b) => b - a).slice(0, 3);
+  const known = [...publicIds, ...botIds, ...initialPosts];
+  const discovered = publicIds.length ? [] : await discoverPosts(Math.max(...known));
+  return [...new Set([...known, ...discovered])].sort((a, b) => b - a).slice(0, 3);
 }
 
 export async function TelegramUpdates() {
