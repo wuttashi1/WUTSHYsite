@@ -1,6 +1,7 @@
 "use client";
 
 
+import { HomeSocialLinks } from "@/components/HomeSocialLinks";
 import { T } from "@/components/LocaleProvider";
 import { SiteSettings } from "@/types";
 import { motion, AnimatePresence } from "framer-motion";
@@ -181,6 +182,9 @@ export function HeroSection({ settings, items }: HeroSectionProps) {
               <T>{settings.content.hero.cta_secondary}</T>
             </Link>
           </motion.div>
+          <div className="mt-6 border-t border-black/5 pt-5">
+            <HomeSocialLinks contact={settings.contact} />
+          </div>
         </div>
       </div>
     </section>

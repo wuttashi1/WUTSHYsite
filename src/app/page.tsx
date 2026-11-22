@@ -12,7 +12,6 @@ import { DrumKitCard } from "@/components/DrumKitCard";
 import { HeroSection } from "@/components/HeroSection";
 import { TrendingCarousel } from "@/components/TrendingCarousel";
 import { VideoCarousel } from "@/components/VideoCarousel";
-import { HomeSocialLinks } from "@/components/HomeSocialLinks";
 import { homeVideos } from "@/lib/home-videos";
 import { Reveal } from "@/components/anim/Reveal";
 
@@ -48,7 +47,6 @@ export default async function HomePage() {
   return (
     <div className="pb-28">
       <HeroSection settings={settings} items={heroItems} />
-      <HomeSocialLinks contact={settings.contact} />
 
       <div className="pb-8">
         <TrendingCarousel items={trending} />

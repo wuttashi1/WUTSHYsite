@@ -1,16 +1,16 @@
-.section { overflow: hidden; background: radial-gradient(ellipse at 50% 50%, #292714, #111 70%); color: white; padding: 64px 0; }
-.stage { position: relative; height: 490px; perspective: 1200px; touch-action: pan-y; }
-.card { position: absolute; top: 50%; left: 50%; margin-top: -180px; height: 360px; border: 1px solid #ffffff30; border-radius: 24px; background: #090909; overflow: hidden; box-shadow: 0 30px 70px #0009; transition: transform 650ms cubic-bezier(.22,1,.36,1), opacity 500ms; }
+.section { overflow: hidden; background: #fff; color: #111; padding: 48px 0 64px; }
+.stage { position: relative; height: 430px; perspective: 1200px; touch-action: pan-y; }
+.card { position: absolute; top: 50%; left: 50%; margin-top: -180px; height: 360px; border: 1px solid #00000010; border-radius: 24px; background: #111; color: white; overflow: hidden; box-shadow: 0 16px 40px #00000018; transition: transform 650ms cubic-bezier(.22,1,.36,1), opacity 500ms; }
 .landscape { width: 640px; }
 .portrait { width: 202.5px; }
 .preview { position: relative; width: 100%; height: 100%; cursor: pointer; text-align: left; }
 .preview img { width: 100%; height: 100%; object-fit: contain; }
 .preview::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 40%, #000d); pointer-events: none; }
-.play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: #facc15; color: #111; z-index: 1; }
+.play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: #fffffff2; color: #111; z-index: 1; }
 .caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; font-size: 18px; font-weight: 600; z-index: 1; overflow-wrap: anywhere; }
-.control { display: grid; place-items: center; min-width: 44px; min-height: 44px; border: 1px solid #ffffff30; border-radius: 50%; cursor: pointer; }
-.control:hover { background: #ffffff15; }
+.control { display: grid; place-items: center; min-width: 44px; min-height: 44px; border: 1px solid #0000001a; border-radius: 50%; background: white; cursor: pointer; }
+.control:hover { background: #f5f5f5; }
 .control:disabled { opacity: .3; cursor: default; }
-.preview:focus-visible, .control:focus-visible { outline: 3px solid #facc15; outline-offset: -4px; }
-@media (max-width: 767px) { .stage { height: 400px; perspective: 800px; } .card { height: 300px; margin-top: -150px; } .portrait { width: 168.75px; } .landscape { width: 78vw; height: calc(78vw * 9 / 16); margin-top: calc(-78vw * 9 / 32); } .caption { padding: 12px; font-size: 14px; } .play { width: 48px; height: 48px; } }
+.preview:focus-visible, .control:focus-visible { outline: 3px solid #a3a3a3; outline-offset: -4px; }
+@media (max-width: 767px) { .stage { height: 350px; perspective: 800px; } .card { height: 300px; margin-top: -150px; } .portrait { width: 168.75px; } .landscape { width: 78vw; height: calc(78vw * 9 / 16); margin-top: calc(-78vw * 9 / 32); } .caption { padding: 12px; font-size: 14px; } .play { width: 48px; height: 48px; } }
 @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
