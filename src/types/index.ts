@@ -132,6 +132,8 @@ export interface SiteSettings {
     enabled: boolean;
   };
   featured_video: {
+    videos?: import("@/lib/home-videos").HomeVideo[];
+    auto_rotate?: boolean;
     youtube_url: string;
     enabled: boolean;
     title: string;
