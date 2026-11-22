@@ -1,2 +1,2 @@
-import {VisualizerLogin} from '@/components/visualizer/Auth';
-export default function Page(){return <VisualizerLogin/>;}
+import {redirect} from 'next/navigation';
+export default function Page(){redirect('/admin/login');}

@@ -43,7 +43,7 @@ export async function updateSession(request: NextRequest) {
 
   const {data: admin} = user ? await supabase.rpc("is_site_admin") : {data:false};
   if (isAdminArea && !isLogin && user && !admin) {
-    return NextResponse.redirect(new URL("/visualizer", request.url));
+    return NextResponse.redirect(new URL("/", request.url));
   }
 
   if (isLogin && user && admin) {

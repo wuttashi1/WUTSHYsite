@@ -10,7 +10,7 @@ export async function visualizerSession(){
  const [{data:admin,error:roleError},{data:access,error}]=await Promise.all([db.rpc('is_site_admin'),db.from('visualizer_access').select('*').eq('user_id',user.id).maybeSingle()]);
  return {user,admin:admin===true,access:access as Access|null,status:admin===true?'ACTIVE' as const:effectiveStatus(access),ready:!error&&!roleError};
 }
-export async function assertAccess(){const s=await visualizerSession();if(!s.ready||!s.user||s.status!=='ACTIVE')throw new Error('Access denied');return s;}
+export async function assertAccess(){const s=await visualizerSession();if(!s.ready||!s.user||!s.admin)throw new Error('Access denied');return s;}
 export async function isSiteAdmin(){try{return (await visualizerSession()).admin;}catch{return false;}}
 export function sameOrigin(req:Request){return req.headers.get('origin')===new URL(req.url).origin;}
 export function adminDb(actor:string){if(!process.env.SUPABASE_SERVICE_ROLE_KEY)throw new Error('Service key missing');return createServiceClient(process.env.NEXT_PUBLIC_SUPABASE_URL!,process.env.SUPABASE_SERVICE_ROLE_KEY,{auth:{persistSession:false,autoRefreshToken:false},global:{headers:{'x-admin-id':actor}}});}

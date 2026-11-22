@@ -1,4 +1,5 @@
 
+import { BeatsTabs } from "@/components/BeatsTabs";
 import { T } from "@/components/LocaleProvider";
 import { getWorks, getSiteSettings } from "@/lib/queries";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -21,6 +22,7 @@ export default async function BeatsPage() {
     <div className="pb-28">
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <BeatsTabs />
           <Reveal>
             <SectionHeader
               title={settings.content.pages.beats.title}

@@ -21,6 +21,7 @@ import Image from "next/image";
 import { LanguageSwitcher } from "@/components/LocaleProvider";
 
 const navItems = [
+  { href: "/admin/youtube", label: "YouTube / YT Beats", icon: ListMusic },
   { href: "/admin/visualizer", label: "Visualizer", icon: Disc3 },
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/works", label: "Works", icon: Music },
