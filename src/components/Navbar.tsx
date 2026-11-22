@@ -12,7 +12,6 @@ import { Logo } from "@/components/Logo";
 import { LanguageSwitcher } from "@/components/LocaleProvider";
 
 const links = [
-  { href: "/visualizer", label: "VISUALIZER", badge: "NEW" },
   { href: "/beats", label: "Beats" },
   { href: "/mixing", label: "Mixing", badge: null },
   { href: "/drum-kits", label: "Drum Kits", badge: "NEW" },
@@ -61,7 +60,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={`relative text-sm transition-colors hover:text-white/80 ${
-                pathname === link.href ? "text-white" : "text-white/60"
+                (pathname === link.href || pathname.startsWith(link.href + "/")) ? "text-white" : "text-white/60"
               }`}
               {...hoverProps}
             >

@@ -97,3 +97,13 @@ The homepage includes Beat loops (Google Drive), Telegram and Instagram cards. E
 Under **Admin → Settings → Homepage videos**, enable the section, add YouTube/Shorts links, set titles and formats, reorder or remove entries, then **Save all settings**. Auto format recognizes Shorts; use the 9:16 override for vertical watch links. Existing featured videos remain available until the list is edited. An empty saved list hides the carousel.
 
 Cards rotate every five seconds, pause on hover/focus or playback, and support swipe, keyboard arrows and a video selector. Manual navigation pauses rotation; use Resume rotation to restart. Reduced-motion preferences disable automatic rotation and transitions. Only nearby thumbnails and the selected player are mounted. Settings use the existing `featured_video` JSON row; no database migration is required.
+
+## YouTube Beats integration
+
+Open `/admin/youtube` for the Russian step-by-step setup guide, API-key verification, connection status and manual refresh. The fixed channel is `UCcr6zSvEL26HgESSGnkUhrw`. Apply `supabase/migrations/20261122081256_youtube_integration.sql` before deploying. The existing server service-role key is required; no browser API key or Vercel environment change is needed.
+
+YouTube keys are AES-256-GCM encrypted with a purpose-specific key derived from `CONTACT_ENCRYPTION_KEY` or the existing service-role key. The integration table denies anonymous/authenticated access; server endpoints require the site-admin role and same-origin writes. Rotating the encryption secret requires reconnecting YouTube. The saved key is never returned to the browser. API restrictions should allow only YouTube Data API v3; browser referrer restrictions do not work for server-side calls.
+
+The `/beats/youtube` tab loads every page of the channel uploads playlist. Public visits trigger refresh after 15 minutes; concurrent refreshes share a database claim. Manual refresh is limited to once per minute. Failures preserve the last complete catalog. Public videos are displayed in batches of 24 with search and one active player. Before key setup, the page links to the channel without claiming to show a synced catalog. Provider outages, quotas, deletion and embedding restrictions remain subject to YouTube.
+
+The visualizer and oscilloscope now live under `/admin/visualizer`, protected by the existing site-admin role. Legacy studio URLs redirect to admin routes; ordinary users can no longer request or use visualizer access. Existing local projects keep their IDs and storage database.

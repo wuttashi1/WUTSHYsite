@@ -21,7 +21,7 @@ function Card({id,selected,onSelect,active,activate,deactivate}:{id:PresetId;sel
  },[id,active]);
  const content=<><canvas ref={ref} width={360} height={240} aria-label={`${looks[id].name} MIDI demo`}/><span className="v-preset-name">{looks[id].name}<span>{selected===id?'✓':'↗'}</span></span><span className="v-hint">{looks[id].description}</span></>;
  const events={onMouseEnter:activate,onMouseLeave:deactivate,onFocus:activate,onBlur:deactivate};
- return onSelect?<button {...events} type="button" className="v-preset-card" aria-pressed={selected===id} onClick={()=>onSelect(id)}>{content}</button>:<Link {...events} prefetch={false} className="v-preset-card" href={`/visualizer/editor?preset=${id}`} onClick={()=>{try{sessionStorage.setItem('visualizer-preset',id);}catch{ /* URL also carries the selection. */ }}}>{content}</Link>;
+ return onSelect?<button {...events} type="button" className="v-preset-card" aria-pressed={selected===id} onClick={()=>onSelect(id)}>{content}</button>:<Link {...events} prefetch={false} className="v-preset-card" href={`/admin/visualizer/editor?preset=${id}`} onClick={()=>{try{sessionStorage.setItem('visualizer-preset',id);}catch{ /* URL also carries the selection. */ }}}>{content}</Link>;
 }
 export function PresetGallery({selected,onSelect}:{selected?:PresetId;onSelect?:(id:PresetId)=>void}){
  const [active,setActive]=useState<PresetId|null>(null);

@@ -3508,5 +3508,53 @@
     "Додавайте YouTube-відео та Shorts. На головній гортайте картки свайпом або мишею. Відтворення — після натискання.",
     "Add YouTube videos or Shorts. Drag on the homepage to browse. Videos play only when selected.",
     "YouTube-Videos oder Shorts hinzufügen. Auf der Startseite durch Ziehen blättern. Wiedergabe erst nach Auswahl."
+  ],
+  "Search videos": [
+    "Поиск видео",
+    "Пошук відео",
+    "Search videos",
+    "Videos suchen"
+  ],
+  "Watch on YouTube": [
+    "Смотреть на YouTube",
+    "Дивитися на YouTube",
+    "Watch on YouTube",
+    "Auf YouTube ansehen"
+  ],
+  "No videos found.": [
+    "Видео не найдены.",
+    "Відео не знайдено.",
+    "No videos found.",
+    "Keine Videos gefunden."
+  ],
+  "Load more videos": [
+    "Загрузить ещё видео",
+    "Завантажити ще відео",
+    "Load more videos",
+    "Weitere Videos laden"
+  ],
+  "Beats from my YouTube channel": [
+    "Биты с моего YouTube-канала",
+    "Біти з мого YouTube-каналу",
+    "Beats from my YouTube channel",
+    "Beats von meinem YouTube-Kanal"
+  ],
+  "Open channel": [
+    "Открыть канал",
+    "Відкрити канал",
+    "Open channel",
+    "Kanal öffnen"
+  ],
+  "The video collection is being connected. You can watch all beats on my YouTube channel.": [
+    "Каталог видео подключается. Все биты уже доступны на моём YouTube-канале.",
+    "Каталог відео підключається. Усі біти вже доступні на моєму YouTube-каналі.",
+    "The video collection is being connected. You can watch all beats on my YouTube channel.",
+    "Die Videosammlung wird verbunden. Alle Beats sind auf meinem YouTube-Kanal verfügbar."
+  ],
+  "Showing the last available videos. New uploads will appear after the next successful update.": [
+    "Показываем сохранённый каталог. Новые видео появятся после успешного обновления.",
+    "Показуємо збережений каталог. Нові відео з’являться після успішного оновлення.",
+    "Showing the last available videos. New uploads will appear after the next successful update.",
+    "Der gespeicherte Katalog wird angezeigt. Neue Videos erscheinen nach der nächsten erfolgreichen Aktualisierung."
   ]
 }
