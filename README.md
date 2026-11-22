@@ -89,3 +89,11 @@ For Gmail: smtp.gmail.com, port 465, your Gmail address as username and sender, 
 Contact messages go to the configured email, with the visitor address as Reply-To. After successful email delivery, a copy is sent through the existing enabled Telegram bot/chat when notifications are enabled for that portfolio. A Telegram failure does not ask the visitor to resend an already delivered email. Delivery outcomes (without message content) appear in server logs. Until SMTP is configured, the form clearly reports unavailable and offers the direct email link. No email delivery is claimed before setup.
 
 Public requests validate input, origin, honeypot and consent, with a persistent per-IP minute rate limit. Rate-limit records contain salted hashes only and expire via cleanup. API recipients and bot credentials cannot be supplied by visitors.
+
+## Homepage links and video carousel
+
+The homepage includes Beat loops (Google Drive), Telegram and Instagram cards. Edit social destinations under **Admin → Settings → Music contacts**.
+
+Under **Admin → Settings → Homepage videos**, enable the section, add YouTube/Shorts links, set titles and formats, reorder or remove entries, then **Save all settings**. Auto format recognizes Shorts; use the 9:16 override for vertical watch links. Existing featured videos remain available until the list is edited. An empty saved list hides the carousel.
+
+Cards rotate every five seconds, pause on hover/focus or playback, and support swipe, keyboard arrows and a video selector. Manual navigation pauses rotation; use Resume rotation to restart. Reduced-motion preferences disable automatic rotation and transitions. Only nearby thumbnails and the selected player are mounted. Settings use the existing `featured_video` JSON row; no database migration is required.

@@ -3376,5 +3376,137 @@
     "SMTP зберігається окремо. Отримувачі листів та сповіщення Telegram задаються в контактах вище.",
     "SMTP is saved separately. Contact recipients and Telegram notifications use the contact settings above.",
     "SMTP wird separat gespeichert. Empfänger und Telegram-Benachrichtigungen werden oben in den Kontakten eingestellt."
+  ],
+  "Beat loops": [
+    "Лупы для битов",
+    "Лупи для бітів",
+    "Beat loops",
+    "Beat-Loops"
+  ],
+  "Find your next sound": [
+    "Найди своё звучание",
+    "Знайди своє звучання",
+    "Find your next sound",
+    "Finde deinen nächsten Sound"
+  ],
+  "Stay in touch": [
+    "Будем на связи",
+    "Будьмо на зв’язку",
+    "Stay in touch",
+    "Bleib in Kontakt"
+  ],
+  "Behind the music": [
+    "За кулисами музыки",
+    "За лаштунками музики",
+    "Behind the music",
+    "Hinter der Musik"
+  ],
+  "Videos": [
+    "Видео",
+    "Відео",
+    "Videos",
+    "Videos"
+  ],
+  "Video": [
+    "Видео",
+    "Відео",
+    "Video",
+    "Video"
+  ],
+  "Select video": [
+    "Выбрать видео",
+    "Обрати відео",
+    "Select video",
+    "Video auswählen"
+  ],
+  "Previous video": [
+    "Предыдущее видео",
+    "Попереднє відео",
+    "Previous video",
+    "Vorheriges Video"
+  ],
+  "Next video": [
+    "Следующее видео",
+    "Наступне відео",
+    "Next video",
+    "Nächstes Video"
+  ],
+  "Resume rotation": [
+    "Продолжить перелистывание",
+    "Продовжити гортання",
+    "Resume rotation",
+    "Rotation fortsetzen"
+  ],
+  "Pause rotation": [
+    "Остановить перелистывание",
+    "Зупинити гортання",
+    "Pause rotation",
+    "Rotation pausieren"
+  ],
+  "Close video": [
+    "Закрыть видео",
+    "Закрити відео",
+    "Close video",
+    "Video schließen"
+  ],
+  "Homepage videos": [
+    "Видео на главной",
+    "Відео на головній",
+    "Homepage videos",
+    "Videos auf der Startseite"
+  ],
+  "Show videos on homepage": [
+    "Показывать видео на главной",
+    "Показувати відео на головній",
+    "Show videos on homepage",
+    "Videos auf der Startseite anzeigen"
+  ],
+  "Automatically rotate cards": [
+    "Автоматически листать карточки",
+    "Автоматично гортати картки",
+    "Automatically rotate cards",
+    "Karten automatisch wechseln"
+  ],
+  "Video title": [
+    "Название видео",
+    "Назва відео",
+    "Video title",
+    "Videotitel"
+  ],
+  "Video format": [
+    "Формат видео",
+    "Формат відео",
+    "Video format",
+    "Videoformat"
+  ],
+  "Remove video": [
+    "Удалить видео",
+    "Видалити відео",
+    "Remove video",
+    "Video entfernen"
+  ],
+  "Add video": [
+    "Добавить видео",
+    "Додати відео",
+    "Add video",
+    "Video hinzufügen"
+  ],
+  "Enter a valid HTTPS YouTube video or Shorts link.": [
+    "Введите корректную HTTPS-ссылку на YouTube или Shorts.",
+    "Введіть правильне HTTPS-посилання на YouTube або Shorts.",
+    "Enter a valid HTTPS YouTube video or Shorts link.",
+    "Gültigen HTTPS-Link zu YouTube oder Shorts eingeben."
+  ],
+  "Use Save all settings below to publish your changes.": [
+    "Чтобы применить изменения, нажмите «Сохранить все настройки» внизу.",
+    "Щоб застосувати зміни, натисніть «Зберегти всі налаштування» внизу.",
+    "Use Save all settings below to publish your changes.",
+    "Zum Übernehmen unten alle Einstellungen speichern."
+  ],
+  "Add YouTube videos or Shorts. Drag on the homepage to browse. Videos play only when selected.": [
+    "Добавляйте YouTube-видео и Shorts. На главной листайте карточки свайпом или мышью. Воспроизведение — по нажатию.",
+    "Додавайте YouTube-відео та Shorts. На головній гортайте картки свайпом або мишею. Відтворення — після натискання.",
+    "Add YouTube videos or Shorts. Drag on the homepage to browse. Videos play only when selected.",
+    "YouTube-Videos oder Shorts hinzufügen. Auf der Startseite durch Ziehen blättern. Wiedergabe erst nach Auswahl."
   ]
 }

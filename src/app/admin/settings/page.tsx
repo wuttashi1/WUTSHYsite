@@ -1,6 +1,8 @@
 "use client";
 
 
+import { HomeVideosSettings } from "@/components/admin/HomeVideosSettings";
+import { parseYoutube } from "@/lib/home-videos";
 import { ContactSettings } from "@/components/admin/ContactSettings";
 import { SmtpSettings } from "@/components/admin/SmtpSettings";
 import { contactProfile, validEmail, safeContactUrl } from "@/lib/contact";
@@ -23,39 +25,7 @@ export default function SettingsAdminPage() {
   const { notify } = useToast();
   const [settings, setSettings] = useState<SiteSettings>(DEMO_SETTINGS);
   const [saving, setSaving] = useState(false);
-  const [fetchingYt, setFetchingYt] = useState(false);
   const { hoverProps } = useHoverSound(0.05);
-
-  const fetchYoutubeInfo = async () => {
-    const url = settings.featured_video.youtube_url.trim();
-    if (!url) {
-      notify("Paste a YouTube link first", "error");
-      return;
-    }
-    setFetchingYt(true);
-    try {
-      const res = await fetch(`/api/youtube?url=${encodeURIComponent(url)}`);
-      const data = await res.json();
-      if (!res.ok) {
-        notify(data.error || "Could not fetch video info", "error");
-        return;
-      }
-      setSettings((s) => ({
-        ...s,
-        featured_video: {
-          ...s.featured_video,
-          video_title: data.video_title || "",
-          author: data.author || "",
-          thumbnail_url: data.thumbnail_url || "",
-        },
-      }));
-      notify("Pulled video info from YouTube");
-    } catch {
-      notify("Failed to reach YouTube", "error");
-    } finally {
-      setFetchingYt(false);
-    }
-  };
 
   useEffect(() => {
     async function load() {
@@ -96,6 +66,9 @@ export default function SettingsAdminPage() {
       if (!validEmail(profile.email) || [profile.instagram, profile.telegram, profile.github].some(url => url && !safeContactUrl(url))) {
         notify("Check contact email and HTTPS links", "error"); return;
       }
+    }
+    if (settings.featured_video.videos?.some(video => !parseYoutube(video.url))) {
+      notify("Enter a valid HTTPS YouTube video or Shorts link.", "error"); return;
     }
     setSaving(true);
     const supabase = createClient();
@@ -159,90 +132,7 @@ export default function SettingsAdminPage() {
           </div>
         </section>
 
-        {/* Featured Video */}
-        <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-          <h2 className="text-sm font-bold text-white/70"><T>Featured video (homepage)</T></h2>
-          <div className="mt-4 space-y-3">
-            <Toggle
-              checked={settings.featured_video.enabled}
-              onChange={(v) =>
-                setSettings({
-                  ...settings,
-                  featured_video: { ...settings.featured_video, enabled: v },
-                })
-              }
-              label="Show featured video on homepage"
-            />
-            <Field label="YouTube URL">
-              <TextInput
-                value={settings.featured_video.youtube_url}
-                onChange={(e) =>
-                  setSettings({
-                    ...settings,
-                    featured_video: {
-                      ...settings.featured_video,
-                      youtube_url: e.target.value,
-                    },
-                  })
-                }
-                onBlur={(e) => {
-                  if (e.target.value.trim()) fetchYoutubeInfo();
-                }}
-                placeholder="https://youtube.com/watch?v=..."
-              />
-            </Field>
-
-            {settings.featured_video.youtube_url && (
-              <Button
-                variant="ghost"
-                onClick={fetchYoutubeInfo}
-                disabled={fetchingYt}
-                {...hoverProps}
-              >
-                <T>{fetchingYt ? "Fetching..." : "Pull video info from YouTube"}</T>
-              </Button>
-            )}
-
-            {settings.featured_video.video_title && (
-              <div className="flex items-center gap-3 rounded-xl bg-white/5 p-3">
-                {settings.featured_video.thumbnail_url && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={settings.featured_video.thumbnail_url}
-                    alt=""
-                    className="h-12 w-20 shrink-0 rounded-lg object-cover"
-                  />
-                )}
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-medium text-white">
-                    <T>{settings.featured_video.video_title}</T>
-                  </p>
-                  {settings.featured_video.author && (
-                    <p className="truncate text-xs text-white/40">
-                      <T>{settings.featured_video.author}</T>
-                    </p>
-                  )}
-                </div>
-              </div>
-            )}
-
-            <Field label="Section title (optional)">
-              <TextInput
-                value={settings.featured_video.title}
-                onChange={(e) =>
-                  setSettings({
-                    ...settings,
-                    featured_video: {
-                      ...settings.featured_video,
-                      title: e.target.value,
-                    },
-                  })
-                }
-                placeholder="Featured Video"
-              />
-            </Field>
-          </div>
-        </section>
+        <HomeVideosSettings value={settings.featured_video} onChange={featured_video => setSettings({ ...settings, featured_video })} />
 
         {/* Social */}
         <section className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">

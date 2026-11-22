@@ -11,7 +11,9 @@ import { PlacementCard } from "@/components/PlacementCard";
 import { DrumKitCard } from "@/components/DrumKitCard";
 import { HeroSection } from "@/components/HeroSection";
 import { TrendingCarousel } from "@/components/TrendingCarousel";
-import { FeaturedVideo } from "@/components/FeaturedVideo";
+import { VideoCarousel } from "@/components/VideoCarousel";
+import { HomeSocialLinks } from "@/components/HomeSocialLinks";
+import { homeVideos } from "@/lib/home-videos";
 import { Reveal } from "@/components/anim/Reveal";
 
 export default async function HomePage() {
@@ -46,20 +48,15 @@ export default async function HomePage() {
   return (
     <div className="pb-28">
       <HeroSection settings={settings} items={heroItems} />
+      <HomeSocialLinks contact={settings.contact} />
 
       <div className="pb-8">
         <TrendingCarousel items={trending} />
       </div>
 
-      {settings.featured_video.enabled && settings.featured_video.youtube_url && (
-        <FeaturedVideo
-          youtubeUrl={settings.featured_video.youtube_url}
-          title={settings.featured_video.title}
-          videoTitle={settings.featured_video.video_title}
-          author={settings.featured_video.author}
-          thumbnailUrl={settings.featured_video.thumbnail_url}
-          subtitle={settings.content.home.featured_video_subtitle}
-        />
+      {settings.featured_video.enabled && (
+        <VideoCarousel videos={homeVideos(settings.featured_video)} title={settings.featured_video.title}
+          subtitle={settings.content.home.featured_video_subtitle} autoRotate={settings.featured_video.auto_rotate !== false} />
       )}
 
       <section className="bg-[#111] py-16 text-white md:py-24">
